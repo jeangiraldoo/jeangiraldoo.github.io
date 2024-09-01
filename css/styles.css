@@ -1,7 +1,9 @@
 body{
-	background-color: rgb(41, 41, 61);
+	background-color: rgb(25, 41, 61);
 	margin: 0px;
 }
+
+
 
 nav{
 }
@@ -23,6 +25,7 @@ a{
 #name{
 	color: white;
 	margin: 0px;
+	padding-top: 30px;
 	font-size: 45px;
 	text-align: center;
 
@@ -59,8 +62,21 @@ ul li{
 	width: 65px;
 }
 #links{
-	margin-top: 10px;
+	margin-top: 30px;
 	display: flex;
 	justify-content: center;
+}
 
+#about{
+	margin-top: 100px;
+	padding: 10px;
+	word-wrap: break-word;
+}
+#about h2{
+	color: rgb(0, 204, 255);
+	font-size: 30px;
+}
+#about p{
+	color: white;
+	font-size: 19px;
 }
