@@ -43,6 +43,7 @@ a{
 #container{
 	margin-left: 300px;
 	margin-right: 300px;
+	margin-top: 300px;
 }
 
 ul{
@@ -78,4 +79,7 @@ ul{
 #about p{
 	color: white;
 	font-size: 19px;
+}
+#main-info{
+	margin-top: 190px;
 }
