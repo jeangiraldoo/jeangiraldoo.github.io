@@ -3,9 +3,6 @@ body{
 	margin: 0px;
 }
 
-
-
-
 nav li:hover{
 	background-color: rgb(0, 204, 255);
 }
@@ -41,8 +38,8 @@ a{
 	text-align: center;
 }
 #container{
-	margin-left: 300px;
-	margin-right: 300px;
+	margin-left: 17%;
+	margin-right:17%;
 	margin-top: 300px;
 }
 
@@ -70,9 +67,9 @@ ul{
 #about{
 	margin-top: 80px;
 	padding: 10px;
-	word-wrap: break-word;
+	text-align: center;
 }
-#about h2{
+h2{
 	color: rgb(0, 204, 255);
 	font-size: 30px;
 }
