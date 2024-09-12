@@ -80,3 +80,66 @@ h2{
 #main-info{
 	margin-top: 190px;
 }
+#stack{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#stack div{
+	background-color: white;
+	height: 100px;
+	width: 110px;
+	border-radius: 10px;
+	margin: 5px;
+}
+#stack div img{
+	padding-top: 5px;
+	width: 55px;
+	height: 55px;
+	margin: 0px;
+}
+#stack div #python{
+	padding-top: 15px;
+	width: 45px;
+	height:45px;
+	margin: 0px;
+}
+#stack div #docker{
+	width: 70px;
+	height: 55px;
+}
+#stack div #sqlite{
+	width: 45px;
+	height: 55px;
+}
+#stack p{
+	color: black;
+	margin: 0px;
+}
+#other_skills{
+	justify-content: center;
+	display: flex;
+}
+#other_skills div{
+	background-color: white;
+	height: 100px;
+	width: 110px;
+	border-radius: 10px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#other_skills div img{
+	padding-top: 5px;
+	width: 55px;
+	height: 55px;
+	margin: 0px;
+}
+#other_skills p{
+	color: black;
+	font-size: 16px;
+	margin: 0px;
+}
+
+
+
+
