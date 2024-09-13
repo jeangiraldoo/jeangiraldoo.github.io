@@ -26,7 +26,7 @@ a{
 #name{
 	color: white;
 	margin: 0px;
-	padding-top: 30px;
+	padding-top: 1%;
 	font-size: 45px;
 	text-align: center;
 
@@ -38,9 +38,9 @@ a{
 	text-align: center;
 }
 #container{
-	margin-left: 17%;
-	margin-right:17%;
-	margin-top: 300px;
+	width: 90%;
+	margin: 0 auto 0 auto;
+	
 }
 
 ul{
@@ -65,8 +65,8 @@ ul{
 }
 
 #about{
-	margin-top: 80px;
-	padding: 10px;
+	margin-top: 50vh;
+	height: auto;
 	text-align: center;
 }
 h2{
@@ -78,68 +78,46 @@ h2{
 	font-size: 19px;
 }
 #main-info{
-	margin-top: 190px;
+	margin-top: 25vh;
+	height: 25vh;
 }
-#stack{
+#stack, #other_skills{
 	display: flex;
 	flex-wrap: wrap;
+	height: auto;
+	justify-content: center;
 }
 
-#stack div{
+#stack div, #other_skills div{
 	background-color: white;
-	height: 100px;
-	width: 110px;
-	border-radius: 10px;
+	height:auto;
+	width: 25%;
+	padding-top: 0.5%;
+	border-radius: 15%;
+	max-width: 100px;
+	max-height: 100px;
 	margin: 5px;
 }
-#stack div img{
-	padding-top: 5px;
-	width: 55px;
-	height: 55px;
-	margin: 0px;
+#stack div img, #other_skills div img{
+	width: 50%;
+	height: 60%;
+	max-width:55px;
+	max-height: 70px;
 }
 #stack div #python{
-	padding-top: 15px;
-	width: 45px;
-	height:45px;
-	margin: 0px;
+	padding-top: 5%;
+	width: 50%;
+	height: 50%;
 }
 #stack div #docker{
-	width: 70px;
-	height: 55px;
+	height: 65%;
 }
 #stack div #sqlite{
-	width: 45px;
-	height: 55px;
+	width: 50%;
+	height: 65%;
 }
-#stack p{
+#stack p, #other_skills p{
 	color: black;
 	margin: 0px;
+	font-size: 83%;
 }
-#other_skills{
-	justify-content: center;
-	display: flex;
-}
-#other_skills div{
-	background-color: white;
-	height: 100px;
-	width: 110px;
-	border-radius: 10px;
-	margin-right: 5px;
-	margin-left: 5px;
-}
-#other_skills div img{
-	padding-top: 5px;
-	width: 55px;
-	height: 55px;
-	margin: 0px;
-}
-#other_skills p{
-	color: black;
-	font-size: 16px;
-	margin: 0px;
-}
-
-
-
-
