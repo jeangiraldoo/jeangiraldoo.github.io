@@ -2,12 +2,13 @@ body{
 	background-color: rgb(25, 41, 61);
 	margin: 0px;
 }
-
-nav li:hover{
-	background-color: rgb(0, 204, 255);
+ul{
+	margin-top: 10px;
+	margin-right: 15px;
+	display:flex;
+	justify-content: flex-end;
 }
-
-nav ul li{
+nav li{
 	list-style: none;
 	border-radius: 40px;
 	padding-right: 10px;
@@ -16,13 +17,19 @@ nav ul li{
 	padding-bottom: 10px;
 	background-color: rgb(25, 41, 61);
 }
-
+nav li:hover{
+	background-color: rgb(0, 204, 255);
+}
 a{
 	text-decoration: none;
 	color: white;
 	font-size: 20px;
 }
-
+main{
+	width: 90%;
+	margin: 0 auto 0 auto;
+	
+}
 #name{
 	color: white;
 	margin: 0px;
@@ -37,32 +44,19 @@ a{
 	font-size: 33px;
 	text-align: center;
 }
-#container{
-	width: 90%;
-	margin: 0 auto 0 auto;
-	
+#links {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
 }
-
-ul{
-	margin-top: 10px;
-	margin-right: 15px;
-	display:flex;
-	justify-content: flex-end;
-}
-
-
-.logo{
+#links img{
 	height:40px;
 	width: 40px;
 }
 #github_logo{
 	width: 65px;
 }
-#links{
-	margin-top: 30px;
-	display: flex;
-	justify-content: center;
-}
+
 
 #about{
 	margin-top: 50vh;
