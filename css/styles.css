@@ -15,7 +15,6 @@ h2{
 	color: rgb(0, 204, 255);
 	font-size: 40px;
 	margin: 10px;
-	text-align: center;
 }
 
 ul{
@@ -27,7 +26,7 @@ ul{
 
 p{
 	color: white;
-	font-size: 19px;
+	font-size: 28px;
 }
 
 a{
@@ -47,6 +46,9 @@ a{
 	}
 	h2{
 		font-size: 28px;
+	}
+	p{
+		font-size: 20px;
 	}
 }
 nav li{
