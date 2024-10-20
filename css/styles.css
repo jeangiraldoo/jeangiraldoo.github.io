@@ -50,6 +50,8 @@ a{
 	p{
 		font-size: 20px;
 	}
+	#projects-container .project .project-stack div{
+	}
 }
 nav li{
 	list-style: none;
@@ -195,10 +197,30 @@ main{
 	font-size: 170%;
 	padding-left: 2%;
 }
+
 #projects-container .project .project-header{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+#projects-container .project .project-stack{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3%;
+}
+
+#projects-container .project .project-stack div{
+	display:flex;
+	align-items: center;
+	padding: 5px;
+	background-color: rgb(54, 209, 200);
+	border: 1px solid rgb(25, 41, 61);
+	border-radius: 5%;
+}
+
+#projects-container .project .project-stack div p{
+	font-size: 20px;	
 }
 
 #projects-container .project img{
