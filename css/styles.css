@@ -8,7 +8,6 @@ h1{
 	margin: 0px;
 	padding-top: 1%;
 	font-size: 45px;
-	text-align: center;
 
 }
 
@@ -55,6 +54,18 @@ main{
 	height: auto;
 }
 
+#picture{
+	max-width: 300px;
+	width: 70%;
+	border-radius: 50%;
+	border: 5px solid;
+	margin: auto;
+}
+
+#picture:hover{
+	border-color: rgb(0, 204, 255);
+}
+
 #links{
 	margin-top: 30px;
 	display: flex;
@@ -71,8 +82,9 @@ main{
 }
 
 #main-info{
-	margin-top: 25vh;
+	margin-top: 10vh;
 	height: 25vh;
+	text-align: center;
 }
 
 #about{
