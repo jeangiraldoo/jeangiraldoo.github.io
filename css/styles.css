@@ -33,7 +33,7 @@ a{
 	font-size: 30px;
 }
 
-@media (max-width: 500px){
+@media (max-width: 503px){
 	ul{
 		justify-content: center;
 	}
@@ -48,6 +48,9 @@ a{
 	}
 	p{
 		font-size: 20px;
+	}
+	main #projects-container .project .project-footer div{
+		width: 35%;
 	}
 }
 
@@ -92,7 +95,7 @@ main section{
 	width: 40px;
 }
 
-#links .github_logo, #projects-container .project .github_logo{
+#links .github_logo{
 	width: 65px;
 }
 
@@ -211,6 +214,24 @@ main section{
 
 #projects-container .project .project-stack div p{
 	font-size: 20px;	
+}
+
+#projects-container .project .project-footer{
+	display: flex;
+	justify-content: right;
+}
+
+#projects-container .project .project-footer p{
+	font-size: 20px;
+}
+
+#projects-container .project .project-footer div{
+	background-color: rgb(54, 209, 200);
+	width: 25%;
+	margin: 0 2% 1% 0;
+	padding: 0.5%;
+	border: 2px solid black;
+	border-radius: 15px;
 }
 
 #projects-container .project img{
