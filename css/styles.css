@@ -38,7 +38,7 @@ a{
 		justify-content: center;
 	}
 	li a{
-		font-size: 35px;	
+		font-size: 32px;	
 	}
 	h1{
 		font-size: 40px;	
@@ -65,7 +65,7 @@ nav li:hover{ background-color: rgb(0, 204, 255); }
 
 main{
 	width: 90%;
-	margin: 0 auto 0 auto;
+	margin: 0 auto 5vh auto;
 	height: auto;
 }
 
