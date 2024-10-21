@@ -77,12 +77,8 @@ main section{
 	max-width: 300px;
 	width: 70%;
 	border-radius: 50%;
-	border: 5px solid;
+	border: 7px solid rgb(0, 204, 255);
 	margin: auto;
-}
-
-#picture:hover{
-	border-color: rgb(0, 204, 255);
 }
 
 #links{
