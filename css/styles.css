@@ -103,14 +103,17 @@ main section{
 	height: 90vh;
 }
 
-#stack, #other_skills{
+#skills div{
 	display: flex;
-	flex-wrap: wrap;
-	height: auto;
 	justify-content: center;
 }
 
-#stack div, #other_skills div{
+#skills div article p{
+	text-align: center;
+	font-size: 15px;
+}
+
+#skills div article{
 	background-color: white;
 	height:auto;
 	width: 25%;
@@ -119,35 +122,36 @@ main section{
 	max-width: 100px;
 	max-height: 100px;
 	margin: 5px;
+
 }
 
-#stack div img, #other_skills div img{
+#skills div article img, #other_skills article img{
 	width: 50%;
 	height: 60%;
 	max-width:55px;
 	max-height: 70px;
 }
 
-#stack div #python{
+#skills div article #python{
 	padding-top: 5%;
 	width: 50%;
 	height: 50%;
 }
 
-#stack div #docker{
+#skills div article #docker{
 	height: 65%;
 }
 
-#stack div #sqlite{
+#skills div article #sqlite{
 	width: 50%;
 	height: 65%;
 }
 
-#stack p, #other_skills p, #projects-container p{
+#skills p, #other_skills p, #projects-container p{
+	text-align: left;
 	color: black;
 	margin: 0px;
 	font-size: 83%;
-	text-align: center;
 }
 
 #projects-container{
@@ -225,6 +229,7 @@ main section{
 
 #projects-container .project .project-footer p{
 	font-size: 20px;
+	text-align: center;
 }
 
 #projects-container .project .project-footer div{
