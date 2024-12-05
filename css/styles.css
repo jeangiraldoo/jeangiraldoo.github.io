@@ -92,28 +92,18 @@ main section{
 	margin-top: 17px;
 }
 
-#links #github{
-	height:50px;
-	width: 50px;
-	fill: white;
-}
-
-#links #linkedin{
-	height:50px;
-	width: 50px;
-}
-
 #links svg{
 	fill: white;
 	stroke: white;
 	margin: 0 0.5%;
+	height: 50px;
+	width: 50px;
 }
 
 #links svg:hover path{
 	fill: var(--secondary-colour);
 	stroke: var(--secondary-colour);
 }
-
 
 #main-info{
 	height: 90vh;
