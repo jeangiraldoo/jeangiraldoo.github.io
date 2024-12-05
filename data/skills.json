@@ -1,0 +1,38 @@
+[
+	{
+		"name": "HTML",
+		"logo": "../assets/html.svg"
+	},
+	{
+		"name": "CSS",
+		"logo": "../assets/css.svg"
+	},
+	{
+		"name": "Javascript",
+		"logo": "../assets/javascript.svg"
+	},
+	{
+		"name": "Java",
+		"logo": "../assets/java.svg"
+	},
+	{
+		"name": "Python",
+		"logo": "../assets/python.svg"
+	},
+	{
+		"name": "Docker",
+		"logo": "../assets/docker.svg"
+	},
+	{
+		"name": "PostgreSQL",
+		"logo": "../assets/postgresql.svg"
+	},
+	{
+		"name": "SQLite",
+		"logo": "../assets/sqlite.svg"
+	},
+	{
+		"name": "Git",
+		"logo": "../assets/git.svg"
+	}
+]
