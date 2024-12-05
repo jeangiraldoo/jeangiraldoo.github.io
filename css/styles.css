@@ -1,5 +1,10 @@
+:root {
+	--primary-colour: hsl(213.33, 41%, 16%);
+	--secondary-colour: hsl(192, 100%, 50%);
+}
+
 body{
-	background-color: rgb(25, 41, 61);
+	background-color: var(--primary-colour);
 	margin: 0px;
 }
 
@@ -11,7 +16,7 @@ h1{
 }
 
 h2{
-	color: rgb(0, 204, 255);
+	color: var(--secondary-colour);
 	font-size: 40px;
 	margin: 10px;
 }
@@ -61,10 +66,9 @@ nav li{
 	padding-left: 10px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background-color: rgb(25, 41, 61);
 }
 
-nav li:hover{ background-color: rgb(0, 204, 255); }
+nav li:hover{ background-color: var(--secondary-colour); }
 
 main{
 	width: 90%;
@@ -80,7 +84,7 @@ main section{
 	max-width: 300px;
 	width: 70%;
 	border-radius: 50%;
-	border: 7px solid rgb(0, 204, 255);
+	border: 7px solid var(--secondary-colour);
 	margin: auto;
 }
 
@@ -106,8 +110,8 @@ main section{
 }
 
 #links svg:hover path{
-	fill: rgb(0, 204, 255);
-	stroke: rgb(0, 204, 255);
+	fill: var(--secondary-colour);
+	stroke: var(--secondary-colour);
 }
 
 
@@ -171,7 +175,7 @@ main section{
 
 #projects-container .project:hover{
 	border: 6px solid;
-	border-color: rgb(0, 204, 255);
+	border-color: var(--secondary-colour);
 }
 
 .project div{
@@ -231,7 +235,7 @@ main section{
 }
 
 #projects-container .project .project-footer div{
-	background-color: rgb(54, 209, 200);
+	background-color: hsl(176, 62%, 51%);
 	width: 25%;
 	margin: 0 2% 1% 0;
 	padding: 0.5%;
