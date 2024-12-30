@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Flowizi",
+		"stack": ["Python", "PySide6", "SQLite"],
+		"description": "Automates the process of opening any files, apps or websites that are part of your workflow. All at once with a single keypress.",
+		"github": "https://github.com/jeangiraldoo/flowizi"
+	},
+	{
+		"name": "Moneymalist",
+		"stack": ["React", "Javascript", "SQLite"],
+		"description": "Personal finance hub that centralizes investments, currency conversion, budgeting, income/expenses tracking, and more, with a focus on simplicity and minimalism.",
+		"github": false
+	}
+]
