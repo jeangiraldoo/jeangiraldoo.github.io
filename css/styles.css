@@ -1,12 +1,3 @@
-:root {
-	--primary-colour: hsl(192, 100%, 50%);
-}
-
-body {
-	background-color: hsl(213.33, 41%, 16%);
-	margin-top: 20px;
-}
-
 #info-container {
 	display: flex;
 	justify-content: center;
