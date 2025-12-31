@@ -1,0 +1,146 @@
+h1{
+	text-align: center;
+	color: var(--primary-colour);
+	margin: 0px;
+	font-size: 60px;
+}
+
+h2{
+	font-size: 25px;
+	margin: 0;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	width: 80%;
+	margin: 40px auto 0 auto;
+}
+
+#projects-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.project {
+	box-sizing: border-box;
+	display: flex;
+	gap: 10px;
+	padding: 1.1%;
+	margin: 0;
+	background-color: #b4cae0;
+	width: 100%;
+	border-radius: 10px;
+}
+
+.project img {
+  max-width: 300px;
+  width: 40%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.project:hover {
+	border-color: var(--primary-colour);
+}
+.project-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
+	flex: 1;
+	min-width: 0;
+}
+
+/* .project-info { */
+/*     display: flex; */
+/*     flex-direction: column; */
+/*     justify-content: space-between; */
+/*     flex: 1; */
+/*     min-width: 0; */
+/* } */
+/**/
+/* .project-info { */
+/* 	display: flex; */
+/* 	flex-direction:column; */
+/* 	gap: 20px; */
+/* 	width: 100%; */
+/* 	justify-content: center; */
+/* } */
+.project-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+	font-size: 20px;
+	margin: 0;
+}
+/* .project-stack { */
+/* 	display: grid; */
+/* 	grid-template-columns: repeat(auto-fit, minmax(0, max-content)); */
+/* 	gap: 5px; /* small gap between items */ */
+/* 	justify-content: center; /* center the grid in the container */ */
+/* } */
+
+/* .project-stack { */
+/*   display: grid; */
+/*   grid-template-columns: repeat(auto-fit, minmax(100px, auto)); */
+/*   gap: 1px; /* space between stack items */ */
+/*   justify-items: center; /* center items horizontally in their grid cells */ */
+/* } */
+
+.project-stack{
+	display: grid;
+	gap: 3%;
+	justify-content: center;
+}
+
+.project-stack p{
+	background-color: #8dd9a1;
+	padding: 5px 10px;
+	border-radius: 3px;
+	font-size: 16px;
+	text-align: center;
+	margin: 0;
+}
+
+.project-footer {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	padding: 0;
+}
+
+.project-footer a {
+    margin: 0;
+    background-color: hsl(176, 62%, 51%) !important;
+    border-radius: 15px;
+    color: black;
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.project-description {
+		font-size: 15px;
+	}
+	.project-footer {
+		font-size: 10px;
+	}
+	h2 {
+		font-size: 25px;
+	}
+	.project-stack p{
+		font-size: 13px;
+	}
+
+}
