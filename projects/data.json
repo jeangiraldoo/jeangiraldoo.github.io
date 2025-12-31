@@ -1,50 +1,9 @@
 [
 	{
 		"name": "Codedocs",
+		"image_path": "assets/codedocs.png",
 		"stack": ["Neovim", "Lua", "Treesitter"],
-		"description": "A Neovim plugin for annotating code structures such as classes, functions, and files.\n\nAnnotations are language-specific and come with built-in styles such as Google (Python), JavaDoc (Java), RustDoc (Rust), among others, all of which are fully customizable.",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for muldddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssdtiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for multiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for multiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for multiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for multiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for multiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
-	},
-	{
-		"name": "Codedocs",
-		"stack": ["Neovim", "Lua"],
-		"description": "Neovim plugin for generating code annotations for multiple languages",
-		"github": "https://github.com/jeangiraldoo/codedocs"
+		"description": "A Neovim plugin for annotating code structures such as classes (attributes), functions (parameters), and files.\n\nAnnotations are language-specific and come with built-in styles such as Google (Python), JavaDoc (Java), RustDoc (Rust), among others, all of which are fully customizable.",
+		"source_code": "https://github.com/jeangiraldoo/codedocs"
 	}
 ]
