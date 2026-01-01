@@ -28,7 +28,7 @@ main {
 }
 
 .project img {
-  max-width: 300px;
+  max-width: 400px;
   width: 40%;
   height: auto;
   flex-shrink: 0;
@@ -78,13 +78,18 @@ main {
   padding: 5px 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   main {
-    width: 90%;
+    width: 70%;
+    max-width: 415px;
   }
 
   h2 {
     font-size: 20px;
+  }
+
+  .project {
+    display: block;
   }
 
   .project-stack p {
@@ -92,7 +97,8 @@ main {
   }
 
   .project img {
-    max-width: 350px;
-    width: 50%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 30vh;
   }
 }
