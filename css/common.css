@@ -1,9 +1,22 @@
 :root {
-	--primary-colour: hsl(192, 100%, 50%);
+  --primary-colour: hsl(192, 100%, 50%);
 }
 
 body {
-	background-color: hsl(213.33, 41%, 16%);
-	margin-top: 20px;
-	font-family: "Space Mono", monospace;
+  background-color: hsl(213.33, 41%, 16%);
+  font-family: "Space Mono", monospace;
+}
+
+main {
+  margin: 0 auto;
+  width: 65%;
+}
+
+h1,
+h2 {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
 }
