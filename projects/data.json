@@ -3,7 +3,7 @@
 		"name": "Codedocs",
 		"image_path": "assets/codedocs.png",
 		"stack": ["Neovim", "Lua", "Treesitter"],
-		"description": "A Neovim plugin for annotating code structures such as classes (attributes), functions (parameters), and files.\n\nAnnotations are language-specific and come with built-in styles such as Google (Python), JavaDoc (Java), RustDoc (Rust), among others, all of which are fully customizable.",
+		"description": "Neovim plugin for annotating code structures such as classes, functions, files, and more.\n\nSupports language-specific annotations with fully customizable, built-in documentation styles.",
 		"source_code": "https://github.com/jeangiraldoo/codedocs.nvim"
 	}
 ]
