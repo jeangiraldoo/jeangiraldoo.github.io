@@ -45,6 +45,7 @@ main {
 }
 
 .project-description {
+  margin: 0;
   hyphens: auto;
 }
 
@@ -90,6 +91,10 @@ main {
 
   .project {
     display: block;
+  }
+
+  .project-description {
+    font-size: 14px;
   }
 
   .project-stack p {
