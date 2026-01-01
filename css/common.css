@@ -5,4 +5,5 @@
 body {
 	background-color: hsl(213.33, 41%, 16%);
 	margin-top: 20px;
+	font-family: "Space Mono", monospace;
 }
