@@ -10,6 +10,16 @@ main {
   margin: 40px auto;
 }
 
+.project-header {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
+.project-header a {
+  color: #393799;
+}
+
 #projects-container {
   display: flex;
   flex-direction: column;
@@ -37,7 +47,6 @@ main {
 .project-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
   width: 100%;
   flex: 1;
@@ -62,21 +71,6 @@ main {
   border-radius: 3px;
   text-align: center;
   margin: 0;
-}
-
-.project-footer {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 0;
-}
-
-.project-footer a {
-  background-color: hsl(176, 62%, 51%);
-  border-radius: 15px;
-  color: black;
-  padding: 5px 12px;
 }
 
 @media (max-width: 1000px) {

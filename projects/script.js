@@ -10,10 +10,9 @@ fetch("data.json").then(res => res.json()).then(data => {
 		const info_container = document.createElement("div");
 		info_container.classList.add("project-info");
 
-		info_container.appendChild(createProjectHeader(name));
+		info_container.appendChild(createProjectHeader(name, source_code));
 		info_container.appendChild(createProjectDescription(description));
 		info_container.appendChild(createProjectStack(stack));
-		info_container.appendChild(getFooterDiv(source_code));
 
 		project.appendChild(image);
 		project.appendChild(info_container);
@@ -22,10 +21,21 @@ fetch("data.json").then(res => res.json()).then(data => {
 	});
 }).catch(err => console.error(err));
 
-function createProjectHeader(name) {
+function createProjectHeader(name, source_code) {
+	const header = document.createElement("header")
+	header.classList.add("project-header")
 	const projectName = document.createElement("h2")
 	projectName.innerText = name
-	return projectName
+
+	header.appendChild(projectName)
+
+	if (source_code) {
+		const link = document.createElement("a")
+		link.textContent = "- Code"
+		link.href = source_code
+		header.appendChild(link)
+	}
+	return header
 };
 
 function createProjectStack(stack) {
@@ -44,18 +54,4 @@ function createProjectDescription(description) {
 	descriptionText.classList.add("project-description")
 	descriptionText.innerText = description
 	return descriptionText
-};
-
-function getFooterDiv(source_code) {
-	const container = document.createElement("footer")
-	container.classList.add("project-footer")
-
-	if (source_code) {
-		const link = document.createElement("a")
-		link.textContent = "Code"
-		link.href = source_code
-		container.appendChild(link)
-	}
-
-	return container
 };
