@@ -1,0 +1,43 @@
+#content-container {
+  width: 50%;
+}
+
+#post header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#post h3,
+h4,
+h5,
+h6 {
+  color: hsl(260, 70%, 68%);
+}
+
+#post p {
+  color: rgb(227, 227, 220);
+}
+
+#post li {
+  color: rgb(227, 227, 220);
+}
+
+#post li::marker {
+  color: hsl(24, 85%, 72%);
+}
+
+#post-title {
+  text-align: center;
+  color: hsl(175, 65%, 72%);
+}
+
+#post-date {
+  color: #999;
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 90%;
+  }
+}

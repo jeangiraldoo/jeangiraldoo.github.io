@@ -1,0 +1,46 @@
+#content-container {
+  width: 50%;
+}
+
+#blog-description {
+  margin: 0;
+  color: rgb(227, 227, 220);
+}
+
+#post-preview-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post-preview-date {
+  color: var(--primary-colour);
+  display: block;
+}
+
+.post-preview-title {
+  color: rgb(227, 227, 220);
+}
+
+.post-preview header a {
+  display: inline-block;
+  color: rgb(227, 227, 220);
+}
+
+.post-preview-description p {
+  color: #b4cae0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+  }
+}
