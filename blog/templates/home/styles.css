@@ -21,8 +21,12 @@
 }
 
 .post-preview-date {
-  color: var(--primary-colour);
   display: block;
+  color: var(--primary-colour);
+}
+
+.post-preview-read {
+  color: hsl(260, 70%, 68%);
 }
 
 .post-preview-title {

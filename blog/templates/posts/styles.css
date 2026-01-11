@@ -32,8 +32,17 @@ h6 {
   color: hsl(175, 65%, 72%);
 }
 
-#post-date {
+#post-preview-time-data {
+  display: flex;
+}
+
+#post-preview-time-data time,
+#post-preview-time-data .separator {
   color: #999;
+}
+
+.separator {
+  margin: 0 10px;
 }
 
 @media (max-width: 1000px) {

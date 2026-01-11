@@ -20,6 +20,12 @@ const STYLES = {
 	POST: '<link rel="stylesheet" href="/blog/templates/posts/styles.css"/>',
 }
 
+const SEGMENTER = new Intl.Segmenter(undefined, {
+  granularity: "word"
+});
+
+const WPM_READING_SPEED = 184 // Average I found online across languages
+
 const MARKDOWN_DATA = fs.readdirSync(DIRS_FILES.MARKDOWN)
 	.filter(fileName => fileName.endsWith(".md"))
 	.reduce(function(accumulator, fileName) {
@@ -46,6 +52,15 @@ const MARKDOWN_DATA = fs.readdirSync(DIRS_FILES.MARKDOWN)
 		targetDir: `${path.join(DIRS_FILES.POSTS, path.basename(fileName, path.extname(fileName)))}/`,
 		frontMatter: data,
 		content: content,
+		estimatedReadingTimeMinutes: (() => {
+
+			let wordCount = 0;
+			for (const { isWordLike } of SEGMENTER.segment(content)) {
+				if (isWordLike) wordCount++;
+			}
+			const readingTimeMinutes = Math.floor(wordCount / WPM_READING_SPEED)
+			return readingTimeMinutes;
+		})()
 	})
 	return accumulator
 }, []).sort((a, b) => b.frontMatter.date - a.frontMatter.date);
@@ -85,6 +100,7 @@ function buildHomePage() {
 	<section class="post-preview-description">
 		<p>${fileData.frontMatter.description || ""}</p>
 	</section>
+	<time class="post-preview-read">${fileData.estimatedReadingTimeMinutes} min read</time>
 </article>
 `
 		return accumulator + new_entry	
@@ -102,7 +118,11 @@ function buildPosts() {
 	<article id="post">
 		<header>
 			<h2 id="post-title">${fileData.frontMatter.title}</h2>
-			<time id="post-date">${fileData.frontMatter.prettyDate}</time>
+			<div id="post-preview-time-data">
+				<time>${fileData.frontMatter.prettyDate}</time>
+				<span class="separator">•</span>
+				<time>${fileData.estimatedReadingTimeMinutes} min read</time>
+			</div>
 		</header>
 		<section id="post-content">
 			${marked(fileData.content)}
