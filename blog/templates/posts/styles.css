@@ -17,6 +17,8 @@ h6 {
 
 #post p {
   color: rgb(227, 227, 220);
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 #post li {
