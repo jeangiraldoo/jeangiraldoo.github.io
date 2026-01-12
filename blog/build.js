@@ -94,13 +94,16 @@ function buildHomePage() {
 		let new_entry = `
 <article class="post-preview">
 	<header>
-		<time class="post-preview-date">${data.prettyDate}</time>
 		<a href="/${fileData.targetDir}"><h2 class="post-title">${fileData.frontMatter.title}</h2></a>
 	</header>
+	<section class="post-preview-time-container">
+		<time class="post-preview-date">${data.prettyDate}</time>
+		<span class="separator">•</span>
+		<time class="post-preview-read">${fileData.estimatedReadingTimeMinutes} min read</time>
+	</section>
 	<section class="post-preview-description">
 		<p>${fileData.frontMatter.description || ""}</p>
 	</section>
-	<time class="post-preview-read">${fileData.estimatedReadingTimeMinutes} min read</time>
 </article>
 `
 		return accumulator + new_entry	

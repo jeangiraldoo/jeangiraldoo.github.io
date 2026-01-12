@@ -22,12 +22,17 @@
   gap: 5px;
 }
 
-.post-preview-date {
-  display: block;
+.post-preview-time-container {
+  display: flex;
+  gap: 10px;
+}
+
+.post-preview-date,
+.post-preview-read,
+.separator {
   color: hsl(260, 70%, 68%);
 }
 
-.post-preview-read,
 .post-preview-description p {
   color: #b4cae0;
 }
