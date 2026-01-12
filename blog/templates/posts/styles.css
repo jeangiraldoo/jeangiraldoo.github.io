@@ -27,9 +27,8 @@ h6 {
   color: hsl(24, 85%, 72%);
 }
 
-#post-title {
+.post-title {
   text-align: center;
-  color: hsl(175, 65%, 72%);
 }
 
 #post-preview-time-data {

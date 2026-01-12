@@ -1,5 +1,15 @@
+:root {
+  --post-title-colour: hsl(175, 65%, 72%);
+}
+
 a {
-  color: hsl(160, 60%, 55%); /* All inline links should have the same colour */
+  color: var(
+    --primary-colour
+  ); /* All inline links should have the same colour */
+}
+
+strong {
+  color: #8f96d8;
 }
 
 a:hover {
@@ -30,4 +40,8 @@ h1 {
   padding: 0;
   display: flex;
   gap: 1rem;
+}
+
+.post-title {
+  color: var(--post-title-colour);
 }

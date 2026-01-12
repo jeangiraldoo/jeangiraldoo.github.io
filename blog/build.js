@@ -95,7 +95,7 @@ function buildHomePage() {
 <article class="post-preview">
 	<header>
 		<time class="post-preview-date">${data.prettyDate}</time>
-		<a href="/${fileData.targetDir}"><h2 class="post-preview-title">${fileData.frontMatter.title}</h2></a>
+		<a href="/${fileData.targetDir}"><h2 class="post-title">${fileData.frontMatter.title}</h2></a>
 	</header>
 	<section class="post-preview-description">
 		<p>${fileData.frontMatter.description || ""}</p>
@@ -117,7 +117,7 @@ function buildPosts() {
 <main id="content-container">
 	<article id="post">
 		<header>
-			<h2 id="post-title">${fileData.frontMatter.title}</h2>
+			<h2 class="post-title">${fileData.frontMatter.title}</h2>
 			<div id="post-preview-time-data">
 				<time>${fileData.frontMatter.prettyDate}</time>
 				<span class="separator">•</span>
