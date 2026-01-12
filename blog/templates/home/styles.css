@@ -5,6 +5,8 @@
 #blog-description {
   margin: 0;
   color: rgb(227, 227, 220);
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 #post-preview-container {
