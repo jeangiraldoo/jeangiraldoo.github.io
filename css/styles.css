@@ -26,10 +26,12 @@ p {
 nav {
   display: flex;
   gap: 20px;
-  align-items: baseline;
+  padding: 10px;
 }
 
 nav a {
+  display: flex;
+  align-items: center;
   color: rgb(227, 227, 220);
   font-size: 1rem;
 }
@@ -47,6 +49,13 @@ nav a {
   width: 250px;
   height: 250px;
   border-radius: 20px;
+}
+
+svg {
+  height: 22px;
+  aspect-ratio: 1 / 1;
+  color: rgb(227, 227, 220);
+  align-items: baseline;
 }
 
 @media (max-width: 768px) {
