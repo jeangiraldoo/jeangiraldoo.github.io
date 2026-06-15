@@ -1,54 +1,52 @@
-h1 {
-  color: rgb(227, 227, 220);
-}
-
 h2 {
   color: var(--primary-colour);
 }
 
 header {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  padding: 0 20px;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
 p {
   color: rgb(227, 227, 220);
   text-align: left;
-  max-width: 60ch;
+  max-width: 80ch;
   margin: 30px auto;
 }
 
 #personal-info {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: 10px;
+  gap: 50px;
 }
 
-#socials {
+nav {
   display: flex;
-  justify-content: center;
-  margin: 25px 0;
   gap: 20px;
+  align-items: baseline;
 }
 
-#socials a {
+nav a {
   color: rgb(227, 227, 220);
+  font-size: 1rem;
 }
 
-#socials a:hover {
-  color: white;
-  text-decoration: underline;
-  text-decoration-color: var(--primary-colour);
-  text-decoration-thickness: 3px;
+#home-link {
+  color: var(--primary-colour);
+  font-size: 1.24rem;
+}
+
+#social-links {
+	margin-left: auto;
 }
 
 #picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 80px;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
