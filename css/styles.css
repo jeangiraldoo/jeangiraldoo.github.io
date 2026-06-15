@@ -2,14 +2,6 @@ h2 {
   color: var(--primary-colour);
 }
 
-header {
-  display: flex;
-  padding: 0 20px;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
 p {
   color: rgb(227, 227, 220);
   text-align: left;
@@ -21,41 +13,6 @@ p {
   justify-content: center;
   text-align: center;
   gap: 50px;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-  padding: 10px;
-}
-
-nav a {
-  display: flex;
-  align-items: center;
-  color: rgb(227, 227, 220);
-  font-size: 1rem;
-}
-
-#home-link {
-  color: var(--primary-colour);
-  font-size: 1.24rem;
-}
-
-#social-links {
-	margin-left: auto;
-}
-
-#picture {
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
-}
-
-svg {
-  height: 22px;
-  aspect-ratio: 1 / 1;
-  color: rgb(227, 227, 220);
-  align-items: baseline;
 }
 
 @media (max-width: 768px) {
