@@ -4,11 +4,16 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { execSync } from "child_process";
 
-const HTML_STRUCTURES = {
-	COMMON_BASE: fs.readFileSync("blog/templates/base/index.html", "utf8"),
-	HOME: fs.readFileSync("blog/templates/home/structure.html", "utf8")
-	// POST: The structure of a post is the common base + the markdown converted into HTML
-}
+// POST: The structure of a post is the common base + the markdown converted into HTML
+const COMMON_BASE_HTML = fs.readFileSync("blog/common_template.html", "utf8")
+
+const postsContainer = (`
+<main id="content-container">
+  <section id="post-preview-container" aria-label="Latest blog posts">
+	{content}
+  </section>
+</main>
+`)
 
 const DIRS_FILES = {
 	MARKDOWN: "blog/markdown/",
@@ -16,8 +21,8 @@ const DIRS_FILES = {
 }
 
 const STYLES = {
-	HOME: '<link rel="stylesheet" href="/blog/templates/home/styles.css"/>',
-	POST: '<link rel="stylesheet" href="/blog/templates/posts/styles.css"/>',
+	HOME: '<link rel="stylesheet" href="/blog/css/home.css"/>',
+	POST: '<link rel="stylesheet" href="/blog/css/post.css"/>',
 }
 
 const SEGMENTER = new Intl.Segmenter(undefined, {
@@ -84,7 +89,7 @@ function validateFrontMatter(frontMatter, filePath) {
 }
 
 function buildHTMLPage(styles, content) {
-	return HTML_STRUCTURES.COMMON_BASE.replace("{styles}", styles).replace("{content}", content)
+	return COMMON_BASE_HTML.replace("{styles}", styles).replace("{content}", content)
 }
 
 function buildHomePage() {
@@ -92,25 +97,34 @@ function buildHomePage() {
 		const data = fileData.frontMatter
 
 		let new_entry = `
-<article class="post-preview">
-	<header>
-		<a href="/${fileData.targetDir}"><h2 class="post-title">${fileData.frontMatter.title}</h2></a>
-	</header>
-	<section class="post-preview-time-container">
-		<time class="post-preview-date">${data.prettyDate}</time>
-		<span class="separator">•</span>
-		<time class="post-preview-read">${fileData.estimatedReadingTimeMinutes} min read</time>
-	</section>
-	<section class="post-preview-description">
-		<p>${fileData.frontMatter.description || ""}</p>
-	</section>
-</article>
-`
+	<article class="post-preview">
+		<header>
+			<a href="/${fileData.targetDir}"><h2 class="post-title">${fileData.frontMatter.title}</h2></a>
+		</header>
+		<section class="post-preview-time-container">
+			<time class="post-preview-date">${data.prettyDate}</time>
+			<span class="separator">•</span>
+			<time class="post-preview-read">${fileData.estimatedReadingTimeMinutes} min read</time>
+		</section>
+		<section class="post-preview-description">
+			<p>${fileData.frontMatter.description || ""}</p>
+		</section>
+	</article>
+	`
 		return accumulator + new_entry	
 	}, "")
 
-	const homePageContent = HTML_STRUCTURES.HOME.replace("{content}", post_entries)
+	const postsBlock = (`
+	<main id="content-container">
+	  <section id="post-preview-container" aria-label="Latest blog posts">
+		${post_entries}
+	  </section>
+	</main>
+	`)
+
+	const homePageContent = postsBlock.replace("{content}", postsBlock)
 	const final = buildHTMLPage(STYLES.HOME, homePageContent)
+
 	fs.writeFileSync("blog/index.html", final);
 }
 
