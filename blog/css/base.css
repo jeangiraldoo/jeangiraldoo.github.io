@@ -2,10 +2,8 @@
   --post-title-colour: hsl(175, 65%, 72%);
 }
 
-a {
-  color: var(
-    --primary-colour
-  ); /* All inline links should have the same colour */
+p a {
+  color: var(--post-paragraph-link-colour); /* All inline links should have the same colour */
 }
 
 strong {

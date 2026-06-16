@@ -3,7 +3,7 @@ h2 {
 }
 
 p {
-  color: rgb(227, 227, 220);
+  color: var(--text-colour);
   text-align: left;
   max-width: 80ch;
   margin: 30px auto;

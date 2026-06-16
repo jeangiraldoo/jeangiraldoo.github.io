@@ -16,13 +16,13 @@ h6 {
 }
 
 #post p {
-  color: rgb(227, 227, 220);
+  color: var(--post-paragraph-colour);
   hyphens: auto;
   overflow-wrap: break-word;
 }
 
 #post li {
-  color: rgb(227, 227, 220);
+  color: var(--post-list-item-colour);
 }
 
 #post li::marker {

@@ -1,9 +1,28 @@
 :root {
   --primary-colour: hsl(192, 100%, 50%);
+  --bg-colour: hsl(213.33, 41%, 16%);
+  --text-colour: rgb(227, 227, 220);
+  --icon-fg-colour: rgb(227, 227, 220);
+  --nav-link-colour: rgb(227, 227, 220);
+
+  --post-paragraph-colour: rgb(227, 227, 220);
+  --post-paragraph-link-colour: hsl(192, 100%, 50%);
+  --post-list-item-colour: rgb(227, 227, 220);
+}
+
+.light-mode {
+  --bg-colour: rgb(213, 238, 247);
+  --text-colour: black;
+  --icon-fg-colour: black;
+  --nav-link-colour: black;
+  --primary-colour: black;
+
+  --post-paragraph-colour: black;
+  --post-list-item-colour: black;
 }
 
 body {
-  background-color: hsl(213.33, 41%, 16%);
+  background-color: var(--bg-colour);
   font-family: "Space Mono", monospace;
 }
 
