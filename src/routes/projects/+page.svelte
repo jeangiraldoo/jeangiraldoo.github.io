@@ -1,8 +1,8 @@
-h1 {
-  text-align: center;
-  color: var(--primary-colour);
-}
+<script>
+import projects from './data.json';
+</script>
 
+<style>
 main {
   display: flex;
   flex-direction: column;
@@ -101,3 +101,34 @@ main {
     max-height: 30vh;
   }
 }
+</style>
+
+<main>
+	<div id="projects-container">
+		{#each projects as project}
+			<article class="project">
+				<img src={project.image_path} alt={project.name} />
+
+				<div class="project-info">
+					<header class="project-header">
+						<h2>{project.name}</h2>
+
+						{#if project.source_code}
+							<a href={project.source_code}>- Code</a>
+						{/if}
+					</header>
+
+					<p class="project-description">
+						{project.description}
+					</p>
+
+					<div class="project-stack">
+						{#each project.stack as technology}
+							<p>{technology}</p>
+						{/each}
+					</div>
+				</div>
+			</article>
+		{/each}
+	</div>
+</main>

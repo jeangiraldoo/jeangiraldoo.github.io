@@ -1,6 +1,6 @@
 # Personal website
 
-This is my personal website, built with just HTML, CSS and JavaScript.
+This is my personal website, built with Svelte and JavaScript.
 
 ## Design rationale
 
@@ -22,9 +22,3 @@ Supports the following features:
 [ ] Comment section
 [ ] Aproximate reading time per post should be calculated and displayed
 [ ] RSS support
-
-There is a script which turns all Markdown files at `blog/markdown/` into static HTML pages. It can be run using the following command:
-
-```bash
-npm run build-blog
-```

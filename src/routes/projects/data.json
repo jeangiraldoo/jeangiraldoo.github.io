@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Codedocs",
-		"image_path": "/assets/images/projects/codedocs.png",
+		"image_path": "/images/projects/codedocs.png",
 		"stack": ["Neovim", "Lua", "Treesitter"],
 		"description": "Neovim plugin for annotating code structures such as classes, functions, files, and more.\n\nSupports language-specific annotations with fully customizable, built-in documentation styles.",
 		"source_code": "https://github.com/jeangiraldoo/codedocs.nvim"
