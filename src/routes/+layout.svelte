@@ -1,6 +1,5 @@
-<script>
-	// import "../../css/common.css"
-	import Nav from  "../components/Header.svelte"
+<script lang="ts">
+	import Nav from "../components/Header.svelte";
 </script>
 
 <Nav/>

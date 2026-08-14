@@ -1,11 +1,12 @@
-<script>
-	let { data } = $props();
-	const { posts } = data;
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 </script>
 
 <main id="content-container">
 	<section id="post-preview-container" aria-label="Latest blog posts">
-		{#each posts as post}
+		{#each data.posts as post}
 			<article class="post">
 				<header>
 					<a href={`/blog/${post.slug}`}>

@@ -1,5 +1,5 @@
-<script>
-import projects from './data.json';
+<script lang="ts">
+	import projects from './data.json';
 </script>
 
 <style>

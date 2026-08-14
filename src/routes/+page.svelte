@@ -3,7 +3,7 @@
 </svelte:head>
 
 <main id="personal-info">
-  <img src="/images/profile.jpeg" />
+  <img src="/images/profile.jpeg" alt="Jean Giraldo" />
   <section id="about">
 	<p>
 	  Hi there! I'm particularly interested in low level concepts and

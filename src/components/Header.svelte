@@ -1,24 +1,24 @@
-<script>
-import linkedinLogo from '$lib/icons/linkedin.svg?raw';
-import githubLogo from '$lib/icons/github.svg?raw';
-import lightbulbLogo from '$lib/icons/lightbulb.svg?raw';
+<script lang="ts">
+	import linkedinLogo from '$lib/icons/linkedin.svg?raw';
+	import githubLogo from '$lib/icons/github.svg?raw';
+	import lightbulbLogo from '$lib/icons/lightbulb.svg?raw';
 
-function toggleTheme() {
-	const current_theme = localStorage.getItem("jeangiraldooTheme")
+	function toggleTheme() {
+		const current_theme = localStorage.getItem('jeangiraldooTheme');
 
-	if (!current_theme) {
-		localStorage.setItem("jeangiraldooTheme", "dark-mode")
-	} else {
-		document.body.classList.add(current_theme);
+		if (!current_theme) {
+			localStorage.setItem('jeangiraldooTheme', 'dark-mode');
+		} else {
+			document.body.classList.add(current_theme);
+		}
+
+		document.body.classList.toggle('light-mode');
+		if (document.body.classList.contains('light-mode')) {
+			localStorage.setItem('jeangiraldooTheme', 'light-mode');
+		} else {
+			localStorage.setItem('jeangiraldooTheme', 'dark-mode');
+		}
 	}
-
-	document.body.classList.toggle("light-mode");
-	if (document.body.classList.contains("light-mode")) {
-		localStorage.setItem("jeangiraldooTheme", "light-mode")
-	} else {
-		localStorage.setItem("jeangiraldooTheme", "dark-mode")
-	}
-}
 </script>
 
 <header>
@@ -67,7 +67,7 @@ nav a {
   flex-shrink: 0;
 }
 
-header svg, :global(svg) {
+:global(svg) {
 	width: 22px;
 	height: 22px;
 	color: white;

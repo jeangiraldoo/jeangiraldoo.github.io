@@ -1,5 +1,7 @@
-<script>
-	let { data: postData } = $props();
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	let { data: postData }: { data: PageData } = $props();
 </script>
 
 <main id="content-container">
