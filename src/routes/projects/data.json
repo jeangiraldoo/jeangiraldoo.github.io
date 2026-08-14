@@ -5,5 +5,12 @@
 		"stack": ["Neovim", "Lua", "Treesitter"],
 		"description": "Neovim plugin for annotating code structures such as classes, functions, files, and more.\n\nSupports language-specific annotations with fully customizable, built-in documentation styles.",
 		"source_code": "https://github.com/jeangiraldoo/codedocs.nvim"
+	},
+	{
+		"name": "Personal website",
+		"image_path": "/images/projects/personal_website.png",
+		"stack": ["Svelte", "SvelteKit", "JavaScript", "HTML", "CSS"],
+		"description": "Website showcasing the projects I'm proud of, as well as my technical thoughts through a blog. (You are here!)",
+		"source_code": "https://github.com/jeangiraldoo/jeangiraldoo.github.io"
 	}
 ]
