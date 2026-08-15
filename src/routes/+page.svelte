@@ -4,18 +4,12 @@
 
 <main id="personal-info">
   <img src="/images/profile.jpeg" alt="Jean Giraldo" />
-  <section id="about">
-	<p>
-	  Hi there! I'm particularly interested in low level concepts and
-	  theory, the terminal, and building cool things using code.<br /><br />
-
-	  Outside of CS I enjoy reading books, some gaming (mostly Halo and
-	  Titanfall), playing chess, teaching when the chance arises, and
-	  spending time with friends and family.<br /><br />
-
-	  Don't miss out on my projects!
-	</p>
-  </section>
+  <h1>Jean Giraldo</h1>
+  <h2>Fullstack Software Developer</h2>
+  <div id="buttons">
+    <a id="get-in-touch" href="/contact">Get in touch</a>
+    <a id="view-projects" href="/projects">View my projects</a>
+  </div>
 </main>
 
 <style>
@@ -25,15 +19,61 @@ img {
   border-radius: 20px;
 }
 
-p {
+h1 {
   color: var(--text-colour);
-  text-align: left;
-  max-width: 80ch;
-  margin: 30px auto;
+  font-size: 2.5rem;
+  margin: 30px 0 0 0;
+}
+
+h2 {
+  color: var(--primary-colour);
+  font-size: 1.75rem;
+  margin: 10px 0 0 0;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+#get-in-touch,
+#view-projects {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#get-in-touch {
+  background-color: var(--primary-colour);
+  color: var(--bg-colour);
+}
+
+#get-in-touch:hover {
+  background-color: hsl(192, 100%, 78%);
+}
+
+#view-projects {
+  background-color: hsl(166, 92%, 52%);
+  color: var(--bg-colour);
+}
+
+#view-projects:hover {
+  background-color: hsl(166, 92%, 78%);
 }
 
 #personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 15vh;
 }
 
 @media (max-width: 768px) {
