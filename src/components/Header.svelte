@@ -1,6 +1,4 @@
 <script lang="ts">
-	import linkedinLogo from '$lib/icons/linkedin.svg?raw';
-	import githubLogo from '$lib/icons/github.svg?raw';
 	import lightbulbLogo from '$lib/icons/lightbulb.svg?raw';
 
 	function toggleTheme() {
@@ -26,18 +24,11 @@
     <a id="home-link" href="/">Jean Giraldo</a>
     <a href="/projects">Projects</a>
     <a href="/blog">Blog</a>
+    <a href="/contact">Contact</a>
   </nav>
   <button id="theme-toggle" onclick={toggleTheme}>
 		{@html lightbulbLogo}
   </button>
-  <nav id="social-links">
-    <a href="https://github.com/jeangiraldoo">
-		{@html githubLogo}
-    </a>
-    <a href="https://www.linkedin.com/in/jeanngiraldo">
-		{@html linkedinLogo}
-    </a>
-  </nav>
 </header>
 
 <style>
@@ -59,20 +50,11 @@ nav a {
   font-size: 1.24rem;
 }
 
-#social-links {
-  display: flex;
-  gap: 10px;
-  padding: 0;
-  align-items: center;
-  flex-shrink: 0;
-}
-
 :global(svg) {
 	width: 22px;
 	height: 22px;
 	color: white;
 }
-
 
 #theme-toggle {
 	margin-left: auto;
@@ -85,7 +67,6 @@ header {
   padding: 0 20px;
   align-items: center;
   gap: 30px;
-  margin-bottom: 30px;
 }
 </style>
 
