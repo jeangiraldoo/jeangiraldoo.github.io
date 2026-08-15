@@ -24,6 +24,7 @@
     <a id="home-link" href="/">Jean Giraldo</a>
     <a href="/projects">Projects</a>
     <a href="/blog">Blog</a>
+    <a href="/about">About</a>
     <a href="/contact">Contact</a>
   </nav>
   <button id="theme-toggle" onclick={toggleTheme}>
