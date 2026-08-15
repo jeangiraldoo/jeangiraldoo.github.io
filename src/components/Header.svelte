@@ -43,18 +43,23 @@ nav a {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 #home-link {
   color: var(--primary-colour);
-  font-size: 1.24rem;
+  font-size: 1.5rem;
 }
 
 :global(svg) {
 	width: 22px;
 	height: 22px;
 	color: white;
+}
+
+#theme-toggle svg {
+	width: 26px;
+	height: 26px;
 }
 
 #theme-toggle {
