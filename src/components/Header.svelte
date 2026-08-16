@@ -74,5 +74,24 @@ header {
   align-items: center;
   gap: 30px;
 }
+
+@media (max-width: 768px) {
+  nav a {
+    font-size: 1rem;
+  }
+
+  #home-link {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  header {
+    padding: 0 10px;
+    gap: 15px;
+  }
+}
 </style>
 

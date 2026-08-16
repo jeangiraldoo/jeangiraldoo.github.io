@@ -80,5 +80,13 @@ h2 {
   main {
     width: 90%;
   }
+
+  #buttons {
+    flex-wrap: wrap;
+  }
+
+  #personal-info {
+    padding-bottom: 5vh;
+  }
 }
 </style>
