@@ -12,6 +12,7 @@ main {
 
 .project-header {
   display: flex;
+  flex-wrap: wrap;
   gap: 2%;
   align-items: center;
 }
@@ -73,9 +74,9 @@ main {
   margin: 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   main {
-    width: 70%;
+    width: 90%;
     max-width: 415px;
   }
 
