@@ -46,6 +46,10 @@ nav a {
   font-size: 1.25rem;
 }
 
+nav a:hover {
+	color: hsl(166, 92%, 52%);
+}
+
 #home-link {
   color: var(--primary-colour);
   font-size: 1.5rem;

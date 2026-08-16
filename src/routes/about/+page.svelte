@@ -185,7 +185,6 @@ section ul p span {
 
 #background-section p {
 	text-align: left;
-	max-width: 80ch;
 }
 
 @media (max-width: 768px) {
