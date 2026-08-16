@@ -38,11 +38,7 @@
 
 <style>
 main {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 100vh;
+	min-height: 100dvh;
 	width: 70%;
 	margin: 0 auto;
 	padding-top: var(--content-offset, 24px);
@@ -55,9 +51,9 @@ main {
 	gap: 40px;
 }
 
-@supports (height: 100dvh) {
+@supports not (height: 100dvh) {
 	main {
-		height: 100dvh;
+		min-height: 100vh;
 	}
 }
 
@@ -106,5 +102,16 @@ nav a:hover :global(svg), nav a:hover span {
 
 #description p span {
 	color: hsl(166, 92, 52);
+}
+
+@media (max-width: 768px) {
+	main {
+		width: 90%;
+	}
+
+	nav {
+		flex-wrap: wrap;
+		gap: 20px;
+	}
 }
 </style>
