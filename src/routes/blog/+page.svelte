@@ -56,7 +56,7 @@
 .post-preview-date,
 .post-preview-read,
 .separator {
-  color: hsl(260, 70%, 68%);
+  color: var(--theme-tertiary-colour);
 }
 
 .post-preview-description p {

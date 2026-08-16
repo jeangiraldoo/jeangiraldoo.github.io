@@ -106,7 +106,7 @@ main {
 
 h1,
 h2 {
-	color: var(--primary-colour);
+	color: var(--theme-primary-colour);
 }
 
 section {
@@ -116,7 +116,7 @@ section {
 }
 
 section p {
-	color: var(--text-colour);
+	color: var(--theme-text-colour);
 	margin: 0;
 }
 
@@ -143,7 +143,7 @@ section ul h3 {
 section ul p {
 	margin: 0;
 	text-align: left;
-	color: var(--text-colour);
+	color: var(--theme-text-colour);
 }
 
 section ul p span {
@@ -151,20 +151,20 @@ section ul p span {
 }
 
 #education-container {
-	--card-accent: hsl(166, 92%, 52%);
+	--card-accent: var(--theme-secondary-colour);
 }
 
 #languages-container {
-	--card-accent: hsl(40, 85%, 55%);
+	--card-accent: var(--theme-quaternary-colour);
 }
 
 #hobbies-container {
-	--card-accent: hsl(260, 70%, 68%);
+	--card-accent: var(--theme-tertiary-colour);
 }
 
 .education-instance h3 {
 	margin: 0;
-	color: var(--text-colour);
+	color: var(--theme-text-colour);
 }
 
 .education-instance h3:first-child {
@@ -172,7 +172,7 @@ section ul p span {
 }
 
 .education-instance h3:nth-child(2) {
-	color: hsl(40, 85%, 55%);
+	color: var(--theme-quaternary-colour);
 }
 
 .education-instance p {
@@ -180,7 +180,7 @@ section ul p span {
 }
 
 #background-section a {
-	color: var(--primary-colour);
+	color: var(--theme-primary-colour);
 }
 
 #background-section p {

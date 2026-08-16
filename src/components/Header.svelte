@@ -47,11 +47,11 @@ nav a {
 }
 
 nav a:hover {
-	color: hsl(166, 92%, 52%);
+	color: var(--theme-secondary-colour);
 }
 
 #home-link {
-  color: var(--primary-colour);
+  color: var(--theme-primary-colour);
   font-size: 1.5rem;
 }
 

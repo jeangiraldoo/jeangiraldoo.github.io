@@ -20,13 +20,13 @@ img {
 }
 
 h1 {
-  color: var(--text-colour);
+  color: var(--theme-text-colour);
   font-size: 2.5rem;
   margin: 30px 0 0 0;
 }
 
 h2 {
-  color: var(--primary-colour);
+  color: var(--theme-primary-colour);
   font-size: 1.75rem;
   margin: 10px 0 0 0;
 }
@@ -48,8 +48,8 @@ h2 {
 }
 
 #get-in-touch {
-  background-color: var(--primary-colour);
-  color: var(--bg-colour);
+  background-color: var(--theme-primary-colour);
+  color: var(--theme-bg-colour);
 }
 
 #get-in-touch:hover {
@@ -57,8 +57,8 @@ h2 {
 }
 
 #view-projects {
-  background-color: hsl(166, 92%, 52%);
-  color: var(--bg-colour);
+  background-color: var(--theme-secondary-colour);
+  color: var(--theme-bg-colour);
 }
 
 #view-projects:hover {

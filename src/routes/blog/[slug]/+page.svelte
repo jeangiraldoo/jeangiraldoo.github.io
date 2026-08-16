@@ -40,7 +40,7 @@ header {
 
 .post-preview-time time,
 .post-preview-time .separator {
-  color: hsl(260, 70%, 68%);
+  color: var(--theme-tertiary-colour);
 }
 
 .separator {

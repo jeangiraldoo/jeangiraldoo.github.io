@@ -1,17 +1,20 @@
 :root {
-  --primary-colour: hsl(192, 100%, 50%);
-  --bg-colour: hsl(213.33, 41%, 16%);
-  --text-colour: rgb(227, 227, 220);
+  --theme-primary-colour: hsl(192, 100%, 50%);
+  --theme-secondary-colour: hsl(166, 92%, 52%);
+  --theme-tertiary-colour: hsl(260, 70%, 68%);
+  --theme-quaternary-colour: hsl(40, 85%, 55%);
+  --theme-bg-colour: hsl(213.33, 41%, 16%);
+  --theme-text-colour: rgb(227, 227, 220);
 }
 
 .light-mode {
-  --bg-colour: rgb(213, 238, 247);
-  --text-colour: black;
-  --primary-colour: black;
+  --theme-bg-colour: rgb(213, 238, 247);
+  --theme-text-colour: black;
+  --theme-primary-colour: black;
 }
 
 body {
-  background-color: var(--bg-colour);
+  background-color: var(--theme-bg-colour);
   font-family: "Space Mono", monospace;
   margin: 0;
 }

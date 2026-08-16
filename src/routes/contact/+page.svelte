@@ -58,7 +58,7 @@ main {
 }
 
 h1 {
-	color: var(--primary-colour);
+	color: var(--theme-primary-colour);
 	text-align: center;
 }
 
@@ -85,7 +85,7 @@ nav a, a:visited {
 }
 
 nav a:hover :global(svg), nav a:hover span {
-	color: var(--primary-colour);
+	color: var(--theme-primary-colour);
 }
 
 #description {
@@ -96,12 +96,12 @@ nav a:hover :global(svg), nav a:hover span {
 
 #description p {
 	margin: 0;
-	color: var(--text-colour);
+	color: var(--theme-text-colour);
 	font-size: 1.125rem;
 }
 
 #description p span {
-	color: hsl(166, 92, 52);
+	color: var(--theme-secondary-colour);
 }
 
 @media (max-width: 768px) {
