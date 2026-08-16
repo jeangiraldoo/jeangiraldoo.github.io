@@ -47,7 +47,7 @@ header {
   margin: 0 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   #content-container {
     width: 90%;
   }

@@ -187,4 +187,10 @@ section ul p span {
 	text-align: left;
 	max-width: 80ch;
 }
+
+@media (max-width: 768px) {
+	main {
+		width: 90%;
+	}
+}
 </style>
