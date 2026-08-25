@@ -1,16 +1,31 @@
 [
 	{
-		"name": "Codedocs",
 		"image_path": "/images/projects/codedocs.png",
-		"stack": ["Neovim", "Lua", "Treesitter"],
-		"description": "Neovim plugin for annotating code structures such as classes, functions, files, and more.\n\nSupports language-specific annotations with fully customizable, built-in documentation styles.",
+		"message_keys": {
+			"name": "project_codedocs_name",
+			"description": "project_codedocs_description"
+		},
+		"stack": [
+			"Neovim",
+			"Lua",
+			"Treesitter"
+		],
 		"source_code": "https://github.com/jeangiraldoo/codedocs.nvim"
 	},
 	{
-		"name": "Personal website",
 		"image_path": "/images/projects/personal_website.png",
-		"stack": ["Svelte", "SvelteKit", "JavaScript", "HTML", "CSS"],
-		"description": "Website showcasing the projects I'm proud of, as well as my technical thoughts through a blog. (You are here!)",
+		"message_keys": {
+			"name": "project_personal_website_name",
+			"description": "project_personal_website_description"
+		},
+		"stack": [
+			"Svelte",
+			"SvelteKit",
+			"Paraglide JS",
+			"JavaScript",
+			"HTML",
+			"CSS"
+		],
 		"source_code": "https://github.com/jeangiraldoo/jeangiraldoo.github.io"
 	}
 ]

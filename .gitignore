@@ -1,3 +1,7 @@
 node_modules
 build/
 .svelte-kit
+
+# Paraglide
+src/lib/paraglide
+project.inlang/cache/
