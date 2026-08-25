@@ -90,7 +90,7 @@
 		border-radius: 9999px;
 		padding: 0.4rem 0.75rem 0.4rem 1rem;
 		font-family: inherit;
-		font-size: 1.25rem;
+		font-size: var(--header-font-size);
 		cursor: pointer;
 	}
 
@@ -129,7 +129,7 @@
 		border-radius: 8px;
 		color: white;
 		font-family: inherit;
-		font-size: 1.25rem;
+		font-size: var(--header-font-size);
 		text-align: left;
 		white-space: nowrap;
 		cursor: pointer;
