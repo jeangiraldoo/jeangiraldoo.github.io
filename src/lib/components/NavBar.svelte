@@ -1,14 +1,34 @@
 <script lang="ts">
 	import { localizeHref } from "$lib/paraglide/runtime";
+	import { page } from "$app/state";
 	import { m } from "$lib/paraglide/messages.js";
+
+	let currentPage = $derived(page.url.pathname);
+
+	const pages: Record<string, () => string> = {
+		"/projects": m.nav_projects,
+		"/blog": m.nav_blog,
+		"/about": m.nav_about,
+		"/contact": m.nav_contact,
+	};
+
+	function isWithinPath(path: string) {
+		return currentPage.includes(localizeHref(path));
+	}
 </script>
 
-<nav id="Site main links">
+<nav id="site-nav">
 	<a id="home-link" href={localizeHref("/")}>Jean Giraldo</a>
-	<a href={localizeHref("/projects")}>{m.nav_projects()}</a>
-	<a href={localizeHref("/blog")}>{m.nav_blog()}</a>
-	<a href={localizeHref("/about")}>{m.nav_about()}</a>
-	<a href={localizeHref("/contact")}>{m.nav_contact()}</a>
+
+	{#each Object.entries(pages) as [path, message]}
+		<a
+			href={localizeHref(path)}
+			aria-current={isWithinPath(path) ? "page" : undefined}
+			class:selected-link={isWithinPath(path)}
+		>
+			{message()}
+		</a>
+	{/each}
 </nav>
 
 <style>
@@ -23,6 +43,10 @@
 		align-items: center;
 		color: white;
 		font-size: var(--header-font-size);
+	}
+
+	.selected-link {
+		color: var(--theme-secondary-colour);
 	}
 
 	nav a:hover {
