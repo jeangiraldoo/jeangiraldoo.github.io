@@ -1,10 +1,15 @@
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import { sveltekit } from "@sveltejs/kit/vite";
+import { svelteSitemap } from "svelte-sitemap/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
     sveltekit(),
+    svelteSitemap({
+      domain: "jeangiraldoo.github.io",
+      changeFreq: "yearly",
+    }),
     paraglideVitePlugin({
       project: "./project.inlang",
       outdir: "./src/lib/paraglide",
