@@ -1,0 +1,4 @@
+Sitemap: https://jeangiraldoo.github.io/sitemap.xml
+
+User-agent: *
+Disallow:
