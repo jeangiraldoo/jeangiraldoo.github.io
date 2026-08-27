@@ -1,10 +1,10 @@
 <script>
 	import { m } from "$lib/paraglide/messages.js";
 	import RichMessage from "$lib/components/RichMessage.svelte";
+
+	import EmailLogo from "@lucide/svelte/icons/mail";
+	import { SiGithub, SiUpwork } from "@icons-pack/svelte-simple-icons";
 	import linkedinLogo from "$lib/icons/linkedin.svg?raw";
-	import githubLogo from "$lib/icons/github.svg?raw";
-	import upworkLogo from "$lib/icons/upwork.svg?raw";
-	import emailLogo from "$lib/icons/email.svg?raw";
 </script>
 
 <main>
@@ -15,7 +15,7 @@
 	</div>
 	<nav aria-label={m.social_links_aria()}>
 		<a href="mailto:jeangiraldoo@gmail.com">
-			{@html emailLogo}
+			<EmailLogo />
 			<span>{m.email_label()}</span>
 		</a>
 		<a href="https://www.linkedin.com/in/jeanngiraldo">
@@ -23,11 +23,11 @@
 			<span>{m.linkedin_label()}</span>
 		</a>
 		<a href="https://github.com/jeangiraldoo">
-			{@html githubLogo}
+			<SiGithub />
 			<span>{m.github_label()}</span>
 		</a>
 		<a href="https://www.upwork.com/freelancers/~010da443f008f8af61">
-			{@html upworkLogo}
+			<SiUpwork />
 			<span>{m.upwork_label()}</span>
 		</a>
 	</nav>

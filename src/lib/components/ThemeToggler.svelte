@@ -1,5 +1,5 @@
 <script>
-	import lightbulbLogo from "$lib/icons/lightbulb.svg?raw";
+	import LightbulbLogo from "@lucide/svelte/icons/lightbulb";
 
 	function toggleTheme() {
 		const current_theme = localStorage.getItem("jeangiraldooTheme");
@@ -20,7 +20,7 @@
 </script>
 
 <button id="theme-toggle" onclick={toggleTheme}>
-	{@html lightbulbLogo}
+	<LightbulbLogo />
 </button>
 
 <style>

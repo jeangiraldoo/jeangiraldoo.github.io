@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { getLocale, locales, setLocale } from "$lib/paraglide/runtime";
 	import { m } from "$lib/paraglide/messages.js";
-	import flagGB from "$lib/icons/flag_gb.svg?raw";
-	import flagES from "$lib/icons/flag_es.svg?raw";
 
-	const flags: Record<string, string> = { en: flagGB, es: flagES };
+	import { GB, ES } from "country-flag-icons/string/3x2";
+	const flags = { en: GB, es: ES };
+
 	const labels: Record<string, () => string> = {
 		en: m.english_label,
 		es: m.spanish_label,
