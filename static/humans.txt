@@ -1,0 +1,21 @@
+Hi there! (⌒ω⌒)ﾉ
+
+/* ME */
+	Name: Jean Giraldo
+	Site: You should know, you are there. *Surprised pikachu face
+	Contact: jeann.giraldo@gmail.com
+	Location: Colombia
+
+/* THANKS */
+My thanks go to http://humanstxt.org/ for creating this format, alongside its philosophy,
+which I really liked and stumbled upon while researching sitemaps and robots.txt.
+My thanks also go to all my university professors for teaching me the ropes about the field,
+as well as the open source community for inspiring me to build my own creations.
+
+/* SITE */
+	Language: English / Español
+	Doctype: HTML5
+	Technologies: Svelte, SvelteKit, TypeScript, Vite, Git, Paraglide JS
+	Tools: Neovim, Firefox, GIMP
+
+/* Thanks for stopping by! (^０^)ノ */
