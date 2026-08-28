@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData } from "./$types";
 
 	let { data: postData }: { data: PageData } = $props();
 </script>
@@ -23,33 +23,37 @@
 </main>
 
 <style>
-#content-container {
-  width: 50%;
-}
+	#content-container {
+		width: 50%;
+	}
 
-.post-title {
-  color: hsl(175, 65%, 72%);
-  text-align: center;
-}
+	#post {
+		header {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
 
-header {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+			.post-title {
+				color: hsl(175, 65%, 72%);
+				text-align: center;
+			}
 
-.post-preview-time time,
-.post-preview-time .separator {
-  color: var(--theme-tertiary-colour);
-}
+			.post-preview-time {
+				time,
+				.separator {
+					color: var(--theme-tertiary-colour);
+				}
 
-.separator {
-  margin: 0 10px;
-}
+				.separator {
+					margin: 0 10px;
+				}
+			}
+		}
+	}
 
-@media (max-width: 768px) {
-  #content-container {
-    width: 90%;
-  }
-}
+	@media (max-width: 768px) {
+		#content-container {
+			width: 90%;
+		}
+	}
 </style>

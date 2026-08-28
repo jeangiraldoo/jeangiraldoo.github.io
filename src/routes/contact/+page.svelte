@@ -46,61 +46,62 @@
 		justify-content: center;
 		align-items: center;
 		gap: 40px;
+
+		h1 {
+			color: var(--theme-primary-colour);
+			text-align: center;
+		}
+
+		#description {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			p {
+				margin: 0;
+				color: var(--theme-text-colour);
+				font-size: 1.125rem;
+
+				& :global(span) {
+					color: var(--theme-secondary-colour);
+				}
+			}
+		}
+
+		nav {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 50px;
+
+			a {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				font-size: 1.125rem;
+
+				span {
+					color: white;
+				}
+
+				&:visited {
+					color: inherit;
+				}
+
+				&:hover {
+					:global(svg),
+					span {
+						color: var(--theme-primary-colour);
+					}
+				}
+			}
+		}
 	}
 
 	@supports not (height: 100dvh) {
 		main {
 			min-height: 100vh;
 		}
-	}
-
-	h1 {
-		color: var(--theme-primary-colour);
-		text-align: center;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 50px;
-	}
-
-	nav a {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		font-size: 1.125rem;
-	}
-
-	nav a span {
-		color: white;
-	}
-
-	nav a,
-	a:visited {
-		color: inherit;
-	}
-
-	nav a:hover :global(svg),
-	nav a:hover span {
-		color: var(--theme-primary-colour);
-	}
-
-	#description {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-
-	#description p {
-		margin: 0;
-		color: var(--theme-text-colour);
-		font-size: 1.125rem;
-	}
-
-	#description p :global(span) {
-		color: var(--theme-secondary-colour);
 	}
 
 	@media (max-width: 768px) {

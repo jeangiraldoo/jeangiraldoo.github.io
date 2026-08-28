@@ -19,7 +19,9 @@
 				<h3>{m.education_multimedia_degree()}</h3>
 				<h3>{m.education_multimedia_date()}</h3>
 				<h3>{m.education_multimedia_university()}</h3>
-				<p><RichMessage message={m.education_multimedia_motivation} /></p>
+				<p>
+					<RichMessage message={m.education_multimedia_motivation} />
+				</p>
 				<p><RichMessage message={m.education_multimedia_dropout} /></p>
 			</li>
 			<li class="education-instance">
@@ -84,41 +86,41 @@
 		display: flex;
 		flex-direction: column;
 		gap: 40px;
-	}
 
-	section p {
-		color: var(--theme-text-colour);
-		margin: 0;
-	}
+		p {
+			color: var(--theme-text-colour);
+			margin: 0;
+		}
 
-	section ul {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 1rem;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+		ul {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 1rem;
+			list-style: none;
+			margin: 0;
+			padding: 0;
 
-	section ul > li {
-		padding: 20px;
-		border: 1px solid var(--card-accent);
-		border-radius: 10px;
-	}
+			h3 {
+				color: var(--card-accent);
+				margin: 0 0 10px 0;
+			}
 
-	section ul h3 {
-		color: var(--card-accent);
-		margin: 0 0 10px 0;
-	}
+			p {
+				margin: 0;
+				text-align: left;
+				color: var(--theme-text-colour);
 
-	section ul p {
-		margin: 0;
-		text-align: left;
-		color: var(--theme-text-colour);
-	}
+				:global(span) {
+					color: var(--card-accent);
+				}
+			}
 
-section ul p :global(span) {
-	color: var(--card-accent);
+			& > li {
+				padding: 20px;
+				border: 1px solid var(--card-accent);
+				border-radius: 10px;
+			}
+		}
 	}
 
 	#education-container {
@@ -133,29 +135,33 @@ section ul p :global(span) {
 		--card-accent: var(--theme-tertiary-colour);
 	}
 
-	.education-instance h3 {
-		margin: 0;
-		color: var(--theme-text-colour);
+	.education-instance {
+		h3 {
+			margin: 0;
+			color: var(--theme-text-colour);
+
+			&:first-child {
+				color: var(--card-accent);
+			}
+
+			&:nth-child(2) {
+				color: var(--theme-quaternary-colour);
+			}
+		}
+
+		p {
+			margin: 10px 0 0 0;
+		}
 	}
 
-	.education-instance h3:first-child {
-		color: var(--card-accent);
-	}
+	#background-section {
+		:global(a) {
+			color: var(--theme-primary-colour);
+		}
 
-	.education-instance h3:nth-child(2) {
-		color: var(--theme-quaternary-colour);
-	}
-
-	.education-instance p {
-		margin: 10px 0 0 0;
-	}
-
-#background-section :global(a) {
-	color: var(--theme-primary-colour);
-	}
-
-	#background-section p {
-		text-align: left;
+		p {
+			text-align: left;
+		}
 	}
 
 	@media (max-width: 768px) {

@@ -6,7 +6,8 @@
 		project_codedocs_name: m.project_codedocs_name,
 		project_codedocs_description: m.project_codedocs_description,
 		project_personal_website_name: m.project_personal_website_name,
-		project_personal_website_description: m.project_personal_website_description
+		project_personal_website_description:
+			m.project_personal_website_description,
 	};
 
 	type ProjectMessageKey = keyof typeof message_map;
@@ -70,96 +71,96 @@
 		margin: 40px auto;
 	}
 
-	.project-header {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 2%;
-		align-items: center;
-	}
-
-	.project-header a {
-		color: #393799;
-	}
-
 	#projects-container {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
-	}
 
-	.project {
-		box-sizing: border-box;
-		display: flex;
-		gap: 2%;
-		padding: 2%;
-		margin: 0;
-		background-color: #b4cae0;
-		width: 100%;
-		border-radius: 10px;
-	}
+		.project {
+			box-sizing: border-box;
+			display: flex;
+			gap: 2%;
+			padding: 2%;
+			margin: 0;
+			background-color: #b4cae0;
+			width: 100%;
+			border-radius: 10px;
 
-	.project img {
-		max-width: 400px;
-		width: 40%;
-		height: auto;
-		flex-shrink: 0;
-	}
+			img {
+				max-width: 400px;
+				width: 40%;
+				height: auto;
+				flex-shrink: 0;
+			}
 
-	.project-info {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-		width: 100%;
-		flex: 1;
-		min-width: 0;
-	}
+			.project-info {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				width: 100%;
+				flex: 1;
+				min-width: 0;
 
-	.project-description {
-		margin: 0;
-		hyphens: auto;
-	}
+				.project-header {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 2%;
+					align-items: center;
 
-	.project-stack {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 7px;
-		justify-content: center;
-	}
+					a {
+						color: #393799;
+					}
+				}
 
-	.project-stack p {
-		background-color: #8dd9a1;
-		padding: 5px 10px;
-		border-radius: 3px;
-		text-align: center;
-		margin: 0;
+				.project-description {
+					margin: 0;
+					hyphens: auto;
+				}
+
+				.project-stack {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 7px;
+					justify-content: center;
+
+					p {
+						background-color: #8dd9a1;
+						padding: 5px 10px;
+						border-radius: 3px;
+						text-align: center;
+						margin: 0;
+					}
+				}
+			}
+		}
 	}
 
 	@media (max-width: 768px) {
 		main {
 			width: 90%;
 			max-width: 415px;
-		}
 
-		h2 {
-			font-size: 20px;
+			h2 {
+				font-size: 20px;
+			}
 		}
 
 		.project {
 			display: block;
-		}
 
-		.project-description {
-			font-size: 14px;
-		}
+			img {
+				width: 100%;
+				max-width: 100%;
+				max-height: 30vh;
+			}
 
-		.project-stack p {
-			font-size: 10px;
-		}
+			.project-description {
+				font-size: 14px;
+			}
 
-		.project img {
-			width: 100%;
-			max-width: 100%;
-			max-height: 30vh;
+			.project-stack p {
+				font-size: 10px;
+			}
 		}
 	}
 </style>

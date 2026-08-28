@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js";
-	import type { PageData } from './$types';
+	import type { PageData } from "./$types";
 
 	let { data }: { data: PageData } = $props();
 </script>
 
-<main id="content-container">
+<main>
 	<section id="post-preview-container" aria-label={m.latest_posts_aria()}>
 		{#each data.posts as post}
 			<article class="post">
@@ -32,48 +32,51 @@
 </main>
 
 <style>
-#content-container {
-  width: 50%;
-}
+	main {
+		width: 50%;
+	}
 
-#post-preview-container {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+	#post-preview-container {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
 
-.post {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+		.post {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
 
-.post-preview-time-container {
-  display: flex;
-  gap: 10px;
-}
+			header {
+				a {
+					display: inline-block;
+					color: hsl(175, 65%, 72%);
+				}
+			}
 
-.post-preview-date,
-.post-preview-read,
-.separator {
-  color: var(--theme-tertiary-colour);
-}
+			.post-preview-time-container {
+				display: flex;
+				gap: 10px;
 
-.post-preview-description p {
-  color: #b4cae0;
-  margin: 0;
-}
+				.post-preview-date,
+				.post-preview-read,
+				.separator {
+					color: var(--theme-tertiary-colour);
+				}
+			}
 
-.post header a {
-  display: inline-block;
-  color: hsl(175, 65%, 72%);
-}
+			.post-preview-description {
+				p {
+					color: #b4cae0;
+					margin: 0;
+				}
+			}
+		}
+	}
 
-
-@media (max-width: 768px) {
-  #content-container {
-    width: 90%;
-  }
-}
+	@media (max-width: 768px) {
+		main {
+			width: 90%;
+		}
+	}
 </style>
