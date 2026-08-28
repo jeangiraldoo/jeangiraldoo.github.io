@@ -5,6 +5,7 @@ export type Post = {
 	slug: string;
 	title: string;
 	description: string;
+	date: Date;
 	prettyDate: string;
 	readingTimeMinutes: number;
 	content: string;
@@ -35,6 +36,7 @@ function parsePost(filePath: string, markdown: string): Post {
 		slug,
 		title,
 		description,
+		date,
 		prettyDate: date.toLocaleDateString('en-US', {
 			year: 'numeric',
 			month: 'short',

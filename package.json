@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@inlang/paraglide-js-svelte": "^1.0.4",
 		"@sveltejs/kit": "^2.70.2",
+		"feed": "^6.0.0",
 		"gray-matter": "^4.0.3",
 		"marked": "^17.0.1"
 	},
