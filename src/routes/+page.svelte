@@ -60,6 +60,14 @@
 			border-radius: 10px;
 			font-size: 1.25rem;
 			font-weight: bold;
+			transition:
+				transform 0.2s,
+				background-color 0.3s;
+
+			&:hover {
+				background-color: hsl(192, 100%, 78%);
+				transform: scale(1.035, 1.035);
+			}
 		}
 
 		#get-in-touch {

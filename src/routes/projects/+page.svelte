@@ -85,6 +85,11 @@
 			background-color: #b4cae0;
 			width: 100%;
 			border-radius: 10px;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(1.021, 1.021);
+			}
 
 			img {
 				max-width: 400px;

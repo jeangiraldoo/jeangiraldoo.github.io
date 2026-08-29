@@ -79,9 +79,12 @@
 				align-items: center;
 				gap: 8px;
 				font-size: 1.125rem;
+				transition: transform 0.2s;
 
+				:global(svg),
 				span {
 					color: white;
+					transition: color 0.3s;
 				}
 
 				&:visited {
@@ -89,6 +92,8 @@
 				}
 
 				&:hover {
+					transform: scale(1.07, 1.07);
+
 					:global(svg),
 					span {
 						color: var(--theme-primary-colour);
