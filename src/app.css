@@ -13,15 +13,28 @@
   --theme-primary-colour: black;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--theme-bg-colour);
   font-family: "Space Mono", monospace;
   margin: 0;
+  min-width: 0;
 }
 
 main {
   margin: 0 auto;
-  width: 70%;
+  width: min(70%, 100%);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
@@ -31,4 +44,10 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 90%;
+  }
 }

@@ -41,7 +41,7 @@
 	});
 </script>
 
-<div class="language-picker" bind:this={root}>
+<div id="language-picker" bind:this={root}>
 	<button
 		type="button"
 		class="picker-trigger"
@@ -75,7 +75,7 @@
 </div>
 
 <style>
-	.language-picker {
+	#language-picker {
 		position: relative;
 		display: inline-flex;
 	}
@@ -142,5 +142,11 @@
 
 	.picker-option.selected {
 		font-weight: bold;
+	}
+
+	@media (max-width: 800px) {
+		.picker-trigger {
+			font-size: 1.3rem;
+		}
 	}
 </style>

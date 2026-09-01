@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { localizeHref } from "$lib/paraglide/runtime";
+	import LanguagePicker from "$lib/components/LanguagePicker.svelte";
 	import { page } from "$app/state";
 	import { m } from "$lib/paraglide/messages.js";
+	import MenuIcon from "@lucide/svelte/icons/square-menu";
+	import XIcon from "@lucide/svelte/icons/square-x";
 
 	let currentPage = $derived(page.url.pathname);
 
@@ -17,9 +20,7 @@
 	}
 </script>
 
-<nav id="site-nav">
-	<a id="home-link" href={localizeHref("/")}>Jean Giraldo</a>
-
+<nav>
 	{#each Object.entries(pages) as [path, message]}
 		<a
 			href={localizeHref(path)}
@@ -34,47 +35,55 @@
 <style>
 	nav {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 20px;
-		padding: 10px;
+
+		a {
+			display: flex;
+			align-items: center;
+			color: white;
+			font-size: var(--header-font-size);
+
+			&:hover {
+				color: var(--theme-secondary-colour);
+			}
+		}
+
+		.selected-link {
+			color: var(--theme-secondary-colour);
+		}
 	}
 
-	nav a {
-		display: flex;
-		align-items: center;
-		color: white;
-		font-size: var(--header-font-size);
-	}
-
-	.selected-link {
-		color: var(--theme-secondary-colour);
-	}
-
-	nav a:hover {
-		color: var(--theme-secondary-colour);
-	}
-
-	#home-link {
-		color: var(--theme-primary-colour);
-		font-size: 1.5rem;
+	:global(.language-picker) {
+		margin-left: auto;
 	}
 
 	:global(svg) {
-		width: 22px;
-		height: 22px;
+		width: 2rem;
+		height: 2rem;
 		color: white;
 	}
 
-	@media (max-width: 768px) {
-		nav a {
-			font-size: 1rem;
-		}
-
-		#home-link {
-			font-size: 1.1rem;
-		}
-
+	@media (max-width: 800px) {
 		nav {
-			gap: 12px;
+			gap: 3rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			order: 1;
+
+			a {
+				font-size: 1.5rem;
+				color: black;
+			}
+
+			.selected-link {
+				color: var(--theme-secondary-colour);
+			}
+		}
+
+		:global(#language-picker) {
+			order: 0;
 		}
 	}
 </style>

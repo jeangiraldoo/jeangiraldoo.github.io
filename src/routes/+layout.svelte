@@ -4,16 +4,16 @@
 	import { page } from "$app/state";
 	import { locales, localizeHref } from "$lib/paraglide/runtime";
 
-	import NavBar from "$lib/components/NavBar.svelte";
-	import LanguagePicker from "$lib/components/LanguagePicker.svelte";
 	import ThemeToggler from "$lib/components/ThemeToggler.svelte";
+	import HeaderMenu from "$lib/components/HeaderMenu.svelte";
 </script>
 
 <div class="page">
 	<header>
-		<NavBar />
+		<a id="home-link" href={localizeHref("/")}>Jean Giraldo</a>
+
+		<HeaderMenu />
 		<ThemeToggler />
-		<LanguagePicker />
 	</header>
 	<slot></slot>
 </div>
@@ -31,10 +31,34 @@
 <style>
 	header {
 		display: flex;
+		flex-wrap: wrap;
 		padding: 0 20px;
 		align-items: center;
-		gap: 30px;
+		column-gap: 30px;
+		row-gap: 10px;
+		position: relative;
 		--header-font-size: 1.25rem;
+		--header-height: 3.5rem;
+
+		#home-link {
+			color: var(--theme-primary-colour);
+			font-size: 1.5rem;
+			order: 0;
+		}
+
+		:global(#container) {
+			order: 1;
+			flex: 1;
+		}
+
+		:global(#theme-toggle) {
+			order: 2;
+		}
+
+		:global(#language-picker) {
+			order: 3;
+			margin-left: auto;
+		}
 	}
 
 	.page {
@@ -49,10 +73,24 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 800px) {
 		header {
 			padding: 0 10px;
-			gap: 15px;
+			column-gap: 10px;
+
+			:global(#container) {
+				order: 3;
+				flex: none;
+			}
+
+			:global(#theme-toggle) {
+				order: 1;
+			}
+
+			:global(#language-picker) {
+				order: 2;
+				margin: 0;
+			}
 		}
 	}
 </style>

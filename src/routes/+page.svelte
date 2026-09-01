@@ -89,7 +89,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 600px) {
 		main {
 			width: 90%;
 			padding-bottom: 5vh;

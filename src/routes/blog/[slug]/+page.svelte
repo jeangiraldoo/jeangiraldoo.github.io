@@ -52,6 +52,9 @@
 		}
 
 		#post-content {
+			overflow-wrap: anywhere;
+			word-break: break-word;
+
 			:global(p) {
 				color: var(--theme-text-colour);
 
@@ -65,7 +68,39 @@
 					text-decoration: underline;
 					color: var(--theme-tertiary-colour);
 					display: inline-block;
+					overflow-wrap: anywhere;
 				}
+			}
+
+			:global(img) {
+				max-width: 100%;
+				height: auto;
+			}
+
+			:global(pre) {
+				max-width: 100%;
+				overflow-x: auto;
+			}
+
+			:global(code) {
+				overflow-wrap: anywhere;
+				word-break: break-word;
+			}
+
+			:global(pre code) {
+				white-space: pre;
+				overflow-wrap: normal;
+				word-break: normal;
+			}
+
+			:global(table) {
+				max-width: 100%;
+				display: block;
+				overflow-x: auto;
+			}
+
+			:global(blockquote) {
+				max-width: 100%;
 			}
 
 			:global(ul) {
