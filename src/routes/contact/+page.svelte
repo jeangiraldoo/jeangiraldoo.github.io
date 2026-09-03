@@ -50,6 +50,7 @@
 		h1 {
 			color: var(--theme-primary-colour);
 			text-align: center;
+			font-size: 2.5rem;
 		}
 
 		#description {
@@ -60,7 +61,7 @@
 			p {
 				margin: 0;
 				color: var(--theme-text-colour);
-				font-size: 1.125rem;
+				font-size: 1rem;
 
 				& :global(span) {
 					color: var(--theme-secondary-colour);
@@ -78,7 +79,7 @@
 				display: flex;
 				align-items: center;
 				gap: 8px;
-				font-size: 1.125rem;
+				font-size: 1rem;
 				transition: transform 0.2s;
 
 				:global(svg),
@@ -112,6 +113,10 @@
 	@media (max-width: 768px) {
 		main {
 			width: 90%;
+		}
+
+		h1 {
+			font-size: 1.75rem;
 		}
 
 		nav {

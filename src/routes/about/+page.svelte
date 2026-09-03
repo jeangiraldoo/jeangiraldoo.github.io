@@ -82,6 +82,14 @@
 		color: var(--theme-primary-colour);
 	}
 
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
 	section {
 		display: flex;
 		flex-direction: column;
@@ -90,6 +98,7 @@
 		p {
 			color: var(--theme-text-colour);
 			margin: 0;
+			font-size: 1rem;
 		}
 
 		ul {
@@ -103,12 +112,14 @@
 			h3 {
 				color: var(--card-accent);
 				margin: 0 0 10px 0;
+				font-size: 1.375rem;
 			}
 
 			p {
 				margin: 0;
 				text-align: left;
 				color: var(--theme-text-colour);
+				font-size: 1rem;
 
 				:global(span) {
 					color: var(--card-accent);
@@ -139,18 +150,22 @@
 		h3 {
 			margin: 0;
 			color: var(--theme-text-colour);
+			font-size: 1.125rem;
 
 			&:first-child {
 				color: var(--card-accent);
+				font-size: 1.375rem;
 			}
 
 			&:nth-child(2) {
 				color: var(--theme-quaternary-colour);
+				font-size: 0.875rem;
 			}
 		}
 
 		p {
 			margin: 10px 0 0 0;
+			font-size: 1rem;
 		}
 	}
 
@@ -167,6 +182,26 @@
 	@media (max-width: 768px) {
 		main {
 			width: 90%;
+		}
+
+		h1 {
+			font-size: 1.75rem;
+		}
+
+		h2 {
+			font-size: 1.25rem;
+		}
+
+		section ul h3 {
+			font-size: 1.125rem;
+		}
+
+		.education-instance h3 {
+			font-size: 1rem;
+		}
+
+		.education-instance h3:first-child {
+			font-size: 1.125rem;
 		}
 	}
 </style>

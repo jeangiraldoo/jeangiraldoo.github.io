@@ -79,6 +79,10 @@
 		margin: 40px auto;
 	}
 
+	h2 {
+		font-size: 1.75rem;
+	}
+
 	#projects-container {
 		display: grid;
 		grid-template-columns: repeat(3, 0.5fr);

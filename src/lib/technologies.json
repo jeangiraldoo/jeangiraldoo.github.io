@@ -1,0 +1,29 @@
+{
+	"All": [],
+	"Languages": [
+		"TypeScript",
+		"JavaScript",
+		"Go",
+		"Python",
+		"Lua"
+	],
+	"Frameworks": [
+		"Svelte",
+		"SvelteKit"
+	],
+	"Databases": [
+		"PostgreSQL"
+	],
+	"DevOps": [
+		"Docker",
+		"Github Actions"
+	],
+	"Others": [
+		"Git",
+		"Godot",
+		"Neovim",
+		"VSCode",
+		"TMux",
+		"Zellij"
+	]
+}

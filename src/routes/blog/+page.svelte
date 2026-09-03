@@ -52,6 +52,11 @@
 					display: inline-block;
 					color: hsl(175, 65%, 72%);
 				}
+
+				.post-title {
+					font-size: 1.5rem;
+					margin: 0;
+				}
 			}
 
 			.post-preview-time-container {
@@ -62,6 +67,7 @@
 				.post-preview-read,
 				.separator {
 					color: var(--theme-tertiary-colour);
+					font-size: 0.875rem;
 				}
 			}
 
@@ -69,6 +75,7 @@
 				p {
 					color: #b4cae0;
 					margin: 0;
+					font-size: 1rem;
 				}
 			}
 		}

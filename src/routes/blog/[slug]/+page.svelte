@@ -33,16 +33,19 @@
 			flex-direction: column;
 			gap: 20px;
 
-			.post-title {
-				color: var(--theme-primary-colour);
-				text-align: center;
-				position: relative;
-			}
+		.post-title {
+			color: var(--theme-primary-colour);
+			text-align: center;
+			position: relative;
+			font-size: 2rem;
+			margin: 0;
+		}
 
 			.post-preview-time {
 				time,
 				.separator {
 					color: var(--theme-secondary-colour);
+					font-size: 0.875rem;
 				}
 
 				.separator {
@@ -57,6 +60,7 @@
 
 			:global(p) {
 				color: var(--theme-text-colour);
+				font-size: 1rem;
 
 				&:first-child::first-letter {
 					color: var(--theme-quaternary-colour);
@@ -128,6 +132,10 @@
 	@media (max-width: 768px) {
 		#content-container {
 			width: 90%;
+		}
+
+		.post-title {
+			font-size: 1.5rem;
 		}
 	}
 </style>
