@@ -17,10 +17,11 @@
 		SiGodotengine,
 	} from "@icons-pack/svelte-simple-icons";
 	import Code2 from "@lucide/svelte/icons/code-2";
+	import Tabs from "./Tabs.svelte";
+	import TagsList from "./TagsList.svelte";
 
 	const technologyGroups: Record<string, string[]> = { ...technologies };
 	technologyGroups.All = Object.values(technologyGroups).flat();
-	const categories = Object.keys(technologyGroups);
 
 	const iconMap: Record<string, any> = {
 		TypeScript: { component: SiTypescript, color: "#3178C6" },
@@ -38,124 +39,51 @@
 		Go: { component: SiGo, color: "#3178C6" },
 		Godot: { component: SiGodotengine, color: "#2496ED" },
 	};
-
-	const categoryMessages: Record<string, () => string> = {
-		All: m.techstack_all_label,
-		Languages: m.techstack_languages_label,
-		Frameworks: m.techstack_frameworks_label,
-		Databases: m.techstack_databases_label,
-		DevOps: m.techstack_devops_label,
-		Others: m.techstack_others_label,
-	};
-
-	let activeCategory: string = $state(categories[0]);
-
-	function selectCategory(category: string) {
-		activeCategory = category;
-	}
 </script>
 
-<div id="techstack-container">
-	<div id="techstack-nav" aria-label="Technology categories">
-		{#each categories as category}
-			<button
-				class="techstack-nav-button"
-				class:active={category === activeCategory}
-				onclick={() => selectCategory(category)}
-			>
-				{categoryMessages[category]?.() ?? category}
-			</button>
-		{/each}
-	</div>
+{#snippet pills(stack: string[])}
+	<TagsList
+		tags={stack.map((tech) => ({
+			label: tech,
+			icon: iconMap[tech]?.component,
+			iconColour: iconMap[tech]?.color,
+		}))}
+		tagColour="dimgrey"
+		textColour="white"
+		fontSize="1rem"
+		iconSize="1.3rem"
+		hoverEffect
+	/>
+{/snippet}
 
-	<div id="techstack-items">
-		<ul>
-			{#each technologyGroups[activeCategory] as technology}
-				{#if iconMap[technology]}
-					{@const Cmp = iconMap[technology].component}
-					<li>
-						<Cmp color={iconMap[technology].color} />
-						{technology}
-					</li>
-				{:else}
-					<li>{technology}</li>
-				{/if}
-			{/each}
-		</ul>
-	</div>
-</div>
+{#snippet allTab()}
+	{@render pills(technologyGroups.All)}
+{/snippet}
+{#snippet languagesTab()}
+	{@render pills(technologyGroups.Languages)}
+{/snippet}
+{#snippet frameworksTab()}
+	{@render pills(technologyGroups.Frameworks)}
+{/snippet}
+{#snippet databasesTab()}
+	{@render pills(technologyGroups.Databases)}
+{/snippet}
+{#snippet devopsTab()}
+	{@render pills(technologyGroups.DevOps)}
+{/snippet}
+{#snippet othersTab()}
+	{@render pills(technologyGroups.Others)}
+{/snippet}
 
-<style>
-	#techstack-container {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
+<Tabs
+	ariaLabel="Technology categories"
+	tabs={[
+		{ label: m.techstack_all_label(), content: allTab },
+		{ label: m.techstack_languages_label(), content: languagesTab },
+		{ label: m.techstack_frameworks_label(), content: frameworksTab },
+		{ label: m.techstack_databases_label(), content: databasesTab },
+		{ label: m.techstack_devops_label(), content: devopsTab },
+		{ label: m.techstack_others_label(), content: othersTab },
+	]}
+/>
 
-	#techstack-nav {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		justify-content: center;
-
-		.techstack-nav-button {
-			padding: 8px 16px;
-			border-radius: 6px;
-			border: none;
-			background-color: var(--theme-bg-colour);
-			color: darkgrey;
-			font-family: inherit;
-			font-weight: bold;
-			font-size: 1rem;
-			cursor: pointer;
-			transition:
-				transform 0.2s,
-				background-color 0.3s;
-
-			&:hover {
-				transform: scale(1.035, 1.035);
-			}
-
-			&.active {
-				color: var(--theme-primary-colour);
-			}
-		}
-	}
-
-	#techstack-items {
-		ul {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			gap: 8px;
-			justify-content: center;
-			list-style: none;
-			padding: 0;
-			margin: 0;
-
-			li {
-				display: flex;
-				align-items: center;
-				gap: 6px;
-				background-color: dimgrey;
-				color: white;
-				padding: 5px 12px;
-				font-size: 1rem;
-				border-radius: 3px;
-				transition:
-					padding 0.3s,
-					transform 0.3s;
-
-				&:hover {
-					padding: 5px 16px; /* horizontal: pushes siblings sideways */
-					transform: scale(1.03);
-				}
-
-				:global(svg) {
-					width: 1.3rem;
-					height: 1.3rem;
-				}
-			}
-		}
-	}
-</style>
