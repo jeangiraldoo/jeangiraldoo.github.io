@@ -45,9 +45,18 @@
 	"github_label": "GitHub",
 	"upwork_label": "Upwork",
 	"latest_posts_aria": "Últimas publicaciones del blog",
-	"code_link_label": "- Código",
+	"latest_posts_label": "Últimas publicaciones",
+	"code_link_label": "Código",
 	"project_codedocs_name": "Codedocs",
-	"project_codedocs_description": "Plugin de Neovim para anotar estructuras de código como clases, funciones, archivos y más.\n\nSoporta anotaciones específicas por lenguaje con estilos de documentación integrados y totalmente personalizables.",
+	"project_codedocs_description": "Framework de anotaciones de Neovim personalizable para estructuras de código como clases, funciones y más.",
 	"project_personal_website_name": "Sitio web personal",
-	"project_personal_website_description": "Sitio web donde muestro los proyectos de los que estoy orgulloso, así como mis pensamientos técnicos a través de un blog. (¡Estás aquí!)"
+	"project_personal_website_description": "Sitio web donde muestro mis proyectos, blog, intereses y más. (¡Estás aquí!)",
+	"techstack_title_label": "Mi caja de herramientas",
+	"techstack_all_label": "Todas",
+	"techstack_languages_label": "Lenguajes",
+	"techstack_frameworks_label": "Frameworks",
+	"techstack_databases_label": "Bases de datos",
+	"techstack_devops_label": "DevOps",
+	"techstack_others_label": "Otros",
+	"home_contact_cta_button": "Trabajemos juntos"
 }

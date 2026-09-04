@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js";
 	import projects from "./data.json";
+	import CodeLogo from "@lucide/svelte/icons/code-xml";
+	import LinkIcon from "$lib/components/LinkIcon.svelte";
 
 	const message_map = {
 		project_codedocs_name: m.project_codedocs_name,
@@ -37,12 +39,6 @@
 				<div class="project-info">
 					<header class="project-header">
 						<h2>{get_message(project.message_keys.name)()}</h2>
-
-						{#if project.source_code}
-							<a href={project.source_code}
-								>{m.code_link_label()}</a
-							>
-						{/if}
 					</header>
 
 					<!-- <p class="project-description"> -->
@@ -57,6 +53,18 @@
 							<p>{technology}</p>
 						{/each}
 					</div>
+					{#if project.source_code}
+						<LinkIcon
+							class="project-link"
+							href={project.source_code}
+							label={m.code_link_label()}
+							labelColour="white"
+							hoverLabelColour="black"
+							fontSize="0.875rem"
+							Icon={CodeLogo}
+							iconPosition="left"
+						/>
+					{/if}
 				</div>
 			</article>
 		{/each}
@@ -72,35 +80,35 @@
 	}
 
 	#projects-container {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
+		display: grid;
+		grid-template-columns: repeat(3, 0.5fr);
+		gap: 15px;
 
 		.project {
-			box-sizing: border-box;
 			display: flex;
-			gap: 2%;
-			padding: 2%;
-			margin: 0;
-			background-color: #b4cae0;
+			flex-direction: column;
 			width: 100%;
 			border-radius: 10px;
 			transition: transform 0.3s;
+			border: 1px solid rgba(255, 255, 255, 0.1);
 
 			&:hover {
 				transform: scale(1.021, 1.021);
 			}
 
 			img {
-				max-width: 400px;
-				width: 40%;
-				height: auto;
+				/* max-width: 400px; */
+				width: auto;
+				height: 180px;
 				flex-shrink: 0;
+				border-radius: 10px;
 			}
 
 			.project-info {
 				display: flex;
+				background-color: rgba(255, 255, 255, 0.05);
 				flex-direction: column;
+				padding: 10px;
 				gap: 20px;
 				width: 100%;
 				flex: 1;
@@ -112,14 +120,21 @@
 					gap: 2%;
 					align-items: center;
 
-					a {
-						color: #393799;
+					h2 {
+						font-size: 1.75rem;
+						margin: 0;
+						min-height: 4.2rem;
+						display: flex;
+						align-items: center;
 					}
 				}
 
 				.project-description {
 					margin: 0;
 					hyphens: auto;
+					font-size: 1rem;
+					color: var(--theme-text-colour);
+					min-height: 4.5em;
 				}
 
 				.project-stack {
@@ -136,6 +151,25 @@
 						margin: 0;
 					}
 				}
+
+				:global(.project-link) {
+					margin-top: auto;
+
+					justify-content: center;
+					padding: 8px 14px;
+					border-radius: 6px;
+					background-color: var(--theme-secondary-colour);
+					transition: background-color 0.2s;
+
+					&:hover {
+						background-color: hsl(166, 92%, 78%);
+					}
+
+					:global(svg) {
+						width: 1.1em;
+						height: 1.1em;
+					}
+				}
 			}
 		}
 	}
@@ -144,27 +178,35 @@
 		main {
 			width: 90%;
 			max-width: 415px;
+		}
 
-			h2 {
-				font-size: 20px;
-			}
+		#projects-container {
+			grid-template-columns: 1fr;
 		}
 
 		.project {
-			display: block;
-
 			img {
 				width: 100%;
-				max-width: 100%;
-				max-height: 30vh;
+				height: auto;
+				object-fit: cover;
 			}
 
-			.project-description {
-				font-size: 14px;
-			}
+			.project-info {
+				.project-header {
+					h2 {
+						font-size: 1.25rem;
+						min-height: 0;
+					}
+				}
 
-			.project-stack p {
-				font-size: 10px;
+				.project-description {
+					font-size: 0.875rem;
+					min-height: 0;
+				}
+
+				.project-stack p {
+					font-size: 0.75rem;
+				}
 			}
 		}
 	}

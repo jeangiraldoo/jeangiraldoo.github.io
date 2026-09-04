@@ -45,9 +45,18 @@
 	"hobby_reading_description": "I enjoy reading both {#em}fiction{/em} and {#em}non-fiction{/em}, across a vast array of genres; for fiction I love {#em}classic literature{/em} and {#em}Hard Sci-Fi{/em}. At the moment my favourite book series is {#em}The Three Body Problem{/em}!",
 	"hobby_games_description": "I love {#em}chess{/em}, cozy indie games and AAA games like {#em}Halo{/em}, {#em}Titanfall{/em} and {#em}Battlefield{/em}.",
 	"latest_posts_aria": "Latest blog posts",
-	"code_link_label": "- Code",
+	"latest_posts_label": "Latest posts",
+	"code_link_label": "Code",
 	"project_codedocs_name": "Codedocs",
-	"project_codedocs_description": "Neovim plugin for annotating code structures such as classes, functions, files, and more.\n\nSupports language-specific annotations with fully customizable, built-in documentation styles.",
+	"project_codedocs_description": "Customizable Neovim annotation framework for code structures such as classes, functions, and more.",
 	"project_personal_website_name": "Personal website",
-	"project_personal_website_description": "Website showcasing the projects I'm proud of, as well as my technical thoughts through a blog. (You are here!)"
+	"project_personal_website_description": "Website showcasing my projects, blog, interests and more. (You are here!)",
+	"techstack_title_label": "My toolbox",
+	"techstack_all_label": "All",
+	"techstack_languages_label": "Languages",
+	"techstack_frameworks_label": "Frameworks",
+	"techstack_databases_label": "Databases",
+	"techstack_devops_label": "DevOps",
+	"techstack_others_label": "Others",
+	"home_contact_cta_button": "Let's work together"
 }
