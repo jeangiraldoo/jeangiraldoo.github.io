@@ -3,6 +3,7 @@
 	import projects from "./data.json";
 	import CodeLogo from "@lucide/svelte/icons/code-xml";
 	import LinkIcon from "$lib/components/LinkIcon.svelte";
+	import TagsList from "$lib/components/TagsList.svelte";
 
 	const message_map = {
 		project_codedocs_name: m.project_codedocs_name,
@@ -48,11 +49,10 @@
 						{get_message(project.message_keys.description)()}
 					</p>
 
-					<div class="project-stack">
-						{#each project.stack as technology}
-							<p>{technology}</p>
-						{/each}
-					</div>
+					<TagsList
+						tags={project.stack.map((tech) => ({ label: tech }))}
+						tagColour="#8dd9a1"
+					/>
 					{#if project.source_code}
 						<LinkIcon
 							class="project-link"
@@ -137,21 +137,6 @@
 					min-height: 4.5em;
 				}
 
-				.project-stack {
-					display: flex;
-					flex-wrap: wrap;
-					gap: 7px;
-					justify-content: center;
-
-					p {
-						background-color: #8dd9a1;
-						padding: 5px 10px;
-						border-radius: 3px;
-						text-align: center;
-						margin: 0;
-					}
-				}
-
 				:global(.project-link) {
 					margin-top: auto;
 
@@ -202,10 +187,6 @@
 				.project-description {
 					font-size: 0.875rem;
 					min-height: 0;
-				}
-
-				.project-stack p {
-					font-size: 0.75rem;
 				}
 			}
 		}
