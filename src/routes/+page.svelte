@@ -5,6 +5,7 @@
 	import TechStack from "$lib/components/TechStack.svelte";
 	import Button from "$lib/components/Button.svelte";
 	import BentoBox from "$lib/components/BentoBox.svelte";
+	import Title from "$lib/components/Title.svelte";
 
 	import CrownIcon from "@lucide/svelte/icons/crown";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
@@ -27,8 +28,14 @@
 {#snippet languages()}
 	<div id="summary-languages-block">
 		<header>
-			<GlobeIcon />
-			<h4>{m.languages_label()}</h4>
+			<Title
+				level={4}
+				size="1.125rem"
+				title={m.languages_label()}
+				Icon={GlobeIcon}
+				iconBackgroundColour="var(--theme-quaternary-colour)"
+				colour="var(--theme-quaternary-colour)"
+			/>
 		</header>
 		<ul id="languages-container">
 			<li>
@@ -47,8 +54,14 @@
 {#snippet education()}
 	<div id="summary-education-block">
 		<header>
-			<GraduationIcon />
-			<h4>{m.education_label()}</h4>
+			<Title
+				level={4}
+				size="1.125rem"
+				title={m.education_label()}
+				Icon={GraduationIcon}
+				colour="var(--theme-secondary-colour)"
+				iconBackgroundColour="var(--theme-secondary-colour)"
+			/>
 		</header>
 		<h3 id="summary-education-level">
 			{m.education_systems_degree()}
@@ -61,8 +74,14 @@
 {#snippet location()}
 	<div id="summary-location-block">
 		<header>
-			<MapPinnedLogo />
-			<h4>{m.location_label()}</h4>
+			<Title
+				level={4}
+				size="1.125rem"
+				title={m.location_label()}
+				Icon={MapPinnedLogo}
+				colour="var(--theme-tertiary-colour)"
+				iconBackgroundColour="var(--theme-tertiary-colour)"
+			/>
 		</header>
 		<p>{m.based_in_label()}</p>
 		<p>{m.location_city_country()}</p>
@@ -90,10 +109,12 @@
 		</div>
 	</section>
 	<section id="summary-section">
-		<header class="section-title">
-			<CrownIcon />
-			<h3>{m.summary_label()}</h3>
-		</header>
+		<Title
+			level={3}
+			size="1.375rem"
+			title={m.summary_label()}
+			Icon={CrownIcon}
+		/>
 		<BentoBox
 			numCols={3}
 			backgroundColor="rgba(255, 255, 255, 0.04)"
@@ -118,17 +139,21 @@
 		/>
 	</section>
 	<section id="tech-stack-section">
-		<header class="section-title">
-			<ToolBoxLogo />
-			<h3>{m.techstack_title_label()}</h3>
-		</header>
+		<Title
+			level={3}
+			size="1.375rem"
+			title={m.techstack_title_label()}
+			Icon={ToolBoxLogo}
+		/>
 		<TechStack />
 	</section>
 	<section id="blog-section" aria-label={m.latest_posts_aria()}>
-		<header class="section-title">
-			<BookOpenIcon />
-			<h3>{m.latest_posts_label()}</h3>
-		</header>
+		<Title
+			level={3}
+			size="1.375rem"
+			title={m.latest_posts_label()}
+			Icon={BookOpenIcon}
+		/>
 		<div id="latest-posts-container">
 			{#each data.posts as post}
 				<article class="post">
@@ -149,10 +174,12 @@
 		</div>
 	</section>
 	<section id="contact-section">
-		<header class="section-title">
-			<EarthLogo />
-			<h3>{m.home_contact_cta()}</h3>
-		</header>
+		<Title
+			level={3}
+			size="1.375rem"
+			title={m.home_contact_cta()}
+			Icon={EarthLogo}
+		/>
 
 		<Button
 			id="alternate-get-in-touch-button"
@@ -184,52 +211,7 @@
 			margin: 30px 0 0 0;
 		}
 
-		.section-title {
-			display: flex;
-			gap: 5px;
-			justify-content: center;
-			align-items: center;
-			font-size: 1.375rem;
-
-			:global(svg) {
-				color: var(--theme-primary-colour);
-				width: 1.1em;
-				height: 1.1em;
-			}
-
-			h3 {
-				color: var(--theme-text-colour);
-				font-size: inherit;
-				margin: 0;
-			}
-		}
-
-		#summary-education-block {
-			header {
-				:global(svg),
-				h4 {
-					color: var(--theme-secondary-colour);
-				}
-			}
-		}
-
-		#summary-location-block {
-			header {
-				:global(svg),
-				h4 {
-					color: var(--theme-tertiary-colour);
-				}
-			}
-		}
-
 		#summary-languages-block {
-			header {
-				:global(svg),
-				h4 {
-					color: var(--theme-quaternary-colour);
-				}
-			}
-
 			ul {
 				padding: 0;
 				margin: 0;
@@ -245,11 +227,6 @@
 				align-items: center;
 				gap: 7px;
 				margin-bottom: 12px;
-
-				h4 {
-					margin: 0;
-					font-size: 1.125rem;
-				}
 			}
 
 			h3,
@@ -314,12 +291,6 @@
 		}
 	}
 
-	#contact-section {
-		h3 {
-			font-size: 1.375rem;
-		}
-	}
-
 	:global(#alternate-get-in-touch-button) {
 		align-self: center;
 	}
@@ -350,14 +321,10 @@
 			h2 {
 				font-size: 1.25rem;
 			}
+		}
 
-			.section-title {
-				font-size: 1.125rem;
-			}
-
-			#contact-section h3 {
-				font-size: 1.125rem;
-			}
+		:global(.title h3) {
+			font-size: 1.125rem;
 		}
 
 		#buttons {

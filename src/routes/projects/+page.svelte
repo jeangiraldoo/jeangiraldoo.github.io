@@ -4,6 +4,7 @@
 	import CodeLogo from "@lucide/svelte/icons/code-xml";
 	import LinkIcon from "$lib/components/LinkIcon.svelte";
 	import TagsList from "$lib/components/TagsList.svelte";
+	import Title from "$lib/components/Title.svelte";
 
 	const message_map = {
 		project_codedocs_name: m.project_codedocs_name,
@@ -29,6 +30,13 @@
 </script>
 
 <main>
+	<Title
+		title={m.projects_label()}
+		level={1}
+		size="2.5rem"
+		colour="var(--theme-primary-colour)"
+		align="left"
+	/>
 	<div id="projects-container">
 		{#each projects as project}
 			<article class="project">
@@ -167,6 +175,10 @@
 		main {
 			width: 90%;
 			max-width: 415px;
+		}
+
+		:global(.title h1) {
+			font-size: 1.75rem;
 		}
 
 		#projects-container {

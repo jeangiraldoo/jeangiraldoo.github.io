@@ -1,10 +1,17 @@
 <script>
 	import { m } from "$lib/paraglide/messages.js";
 	import RichMessage from "$lib/components/RichMessage.svelte";
+	import Title from "$lib/components/Title.svelte";
 </script>
 
 <main>
-	<h1>{m.about_label()}</h1>
+	<Title
+		title={m.about_label()}
+		level={1}
+		size="2.5rem"
+		colour="var(--theme-primary-colour)"
+		align="left"
+	/>
 	<section id="background-section">
 		<p><RichMessage message={m.about_background_intro} /></p>
 		<p><RichMessage message={m.about_background_childhood} /></p>
@@ -13,7 +20,13 @@
 	</section>
 
 	<section>
-		<h2>{m.education_label()}</h2>
+		<Title
+			title={m.education_label()}
+			level={2}
+			size="1.75rem"
+			colour="var(--theme-primary-colour)"
+			align="left"
+		/>
 		<ul id="education-container">
 			<li class="education-instance">
 				<h3>{m.education_multimedia_degree()}</h3>
@@ -33,7 +46,13 @@
 	</section>
 
 	<section>
-		<h2>{m.languages_label()}</h2>
+		<Title
+			title={m.languages_label()}
+			level={2}
+			size="1.75rem"
+			colour="var(--theme-primary-colour)"
+			align="left"
+		/>
 		<ul id="languages-container">
 			<li>
 				<h3>{m.spanish_label()}</h3>
@@ -51,7 +70,13 @@
 	</section>
 
 	<section>
-		<h2>{m.hobbies_label()}</h2>
+		<Title
+			title={m.hobbies_label()}
+			level={2}
+			size="1.75rem"
+			colour="var(--theme-primary-colour)"
+			align="left"
+		/>
 		<ul id="hobbies-container">
 			<li>
 				<h3>{m.hobby_programming()}</h3>
@@ -75,19 +100,6 @@
 		flex-direction: column;
 		gap: 50px;
 		margin: 40px auto;
-	}
-
-	h1,
-	h2 {
-		color: var(--theme-primary-colour);
-	}
-
-	h1 {
-		font-size: 2.5rem;
-	}
-
-	h2 {
-		font-size: 1.75rem;
 	}
 
 	section {
@@ -184,11 +196,11 @@
 			width: 90%;
 		}
 
-		h1 {
+		:global(.title h1) {
 			font-size: 1.75rem;
 		}
 
-		h2 {
+		:global(.title h2) {
 			font-size: 1.25rem;
 		}
 

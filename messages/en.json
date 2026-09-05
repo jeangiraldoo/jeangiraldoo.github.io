@@ -51,6 +51,8 @@
 	"hobby_games_description": "I love {#em}chess{/em}, cozy indie games and AAA games like {#em}Halo{/em}, {#em}Titanfall{/em} and {#em}Battlefield{/em}.",
 	"latest_posts_aria": "Latest blog posts",
 	"latest_posts_label": "Latest posts",
+	"blog_label": "Blog",
+	"projects_label": "Projects",
 	"latest_post_draft_title": "The cost of efficiency in the new world",
 	"latest_post_draft_date": "16, feb",
 	"code_link_label": "Code",

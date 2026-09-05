@@ -1,6 +1,7 @@
 <script>
 	import { m } from "$lib/paraglide/messages.js";
 	import RichMessage from "$lib/components/RichMessage.svelte";
+	import Title from "$lib/components/Title.svelte";
 
 	import EmailLogo from "@lucide/svelte/icons/mail";
 	import { SiGithub, SiUpwork } from "@icons-pack/svelte-simple-icons";
@@ -8,7 +9,12 @@
 </script>
 
 <main>
-	<h1>{m.contact_title()}</h1>
+	<Title
+		title={m.contact_title()}
+		level={1}
+		size="2.5rem"
+		colour="var(--theme-primary-colour)"
+	/>
 	<div id="description">
 		<p><RichMessage message={m.contact_intro} /></p>
 		<p><RichMessage message={m.contact_find_me} /></p>
@@ -46,12 +52,6 @@
 		justify-content: center;
 		align-items: center;
 		gap: 40px;
-
-		h1 {
-			color: var(--theme-primary-colour);
-			text-align: center;
-			font-size: 2.5rem;
-		}
 
 		#description {
 			display: flex;
@@ -115,7 +115,7 @@
 			width: 90%;
 		}
 
-		h1 {
+		:global(.title h1) {
 			font-size: 1.75rem;
 		}
 

@@ -1,11 +1,19 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js";
 	import type { PageData } from "./$types";
+	import Title from "$lib/components/Title.svelte";
 
 	let { data }: { data: PageData } = $props();
 </script>
 
 <main>
+	<Title
+		title={m.blog_label()}
+		level={1}
+		size="2.5rem"
+		colour="var(--theme-primary-colour)"
+		align="left"
+	/>
 	<section id="post-preview-container" aria-label={m.latest_posts_aria()}>
 		{#each data.posts as post}
 			<article class="post">
@@ -84,6 +92,10 @@
 	@media (max-width: 768px) {
 		main {
 			width: 90%;
+		}
+
+		:global(.title h1) {
+			font-size: 1.75rem;
 		}
 	}
 </style>
