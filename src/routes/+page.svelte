@@ -4,6 +4,7 @@
 
 	import TechStack from "$lib/components/TechStack.svelte";
 	import Button from "$lib/components/Button.svelte";
+	import BentoBox from "$lib/components/BentoBox.svelte";
 
 	import CrownIcon from "@lucide/svelte/icons/crown";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
@@ -22,6 +23,51 @@
 <svelte:head>
 	<title>Jean Giraldo</title>
 </svelte:head>
+
+{#snippet languages()}
+	<div id="summary-languages-block">
+		<header>
+			<GlobeIcon />
+			<h4>{m.languages_label()}</h4>
+		</header>
+		<ul id="languages-container">
+			<li>
+				<p>{m.spanish_label()}: {m.native_level()}</p>
+			</li>
+			<li>
+				<p>{m.english_label()}: {m.english_level()}</p>
+			</li>
+			<li>
+				<p>{m.portuguese_label()}: {m.portuguese_level()}</p>
+			</li>
+		</ul>
+	</div>
+{/snippet}
+
+{#snippet education()}
+	<div id="summary-education-block">
+		<header>
+			<GraduationIcon />
+			<h4>{m.education_label()}</h4>
+		</header>
+		<h3 id="summary-education-level">
+			{m.education_systems_degree()}
+		</h3>
+		<h3>{m.education_systems_date()}</h3>
+		<h3>{m.education_systems_university()}</h3>
+	</div>
+{/snippet}
+
+{#snippet location()}
+	<div id="summary-location-block">
+		<header>
+			<MapPinnedLogo />
+			<h4>{m.location_label()}</h4>
+		</header>
+		<p>{m.based_in_label()}</p>
+		<p>{m.location_city_country()}</p>
+	</div>
+{/snippet}
 
 <main>
 	<section id="landing-section">
@@ -48,56 +94,28 @@
 			<CrownIcon />
 			<h3>{m.summary_label()}</h3>
 		</header>
-		<div id="summary-container">
-			<div
-				class="summary-item"
-				id="summary-education-block"
-				style="grid-area: box-1"
-			>
-				<header>
-					<GraduationIcon />
-					<h4>{m.education_label()}</h4>
-				</header>
-				<h3 id="summary-education-level">
-					{m.education_systems_degree()}
-				</h3>
-				<h3>{m.education_systems_date()}</h3>
-				<h3>{m.education_systems_university()}</h3>
-			</div>
-			<div
-				id="summary-location-block"
-				class="summary-item"
-				style="grid-area: box-2"
-			>
-				<header>
-					<MapPinnedLogo />
-					<h4>{m.location_label()}</h4>
-				</header>
-				<p>{m.based_in_label()}</p>
-				<p>{m.location_city_country()}</p>
-			</div>
-			<div
-				class="summary-item"
-				id="summary-languages-block"
-				style="grid-area: box-3"
-			>
-				<header>
-					<GlobeIcon />
-					<h4>{m.languages_label()}</h4>
-				</header>
-				<ul id="languages-container">
-					<li>
-						<p>{m.spanish_label()}: {m.native_level()}</p>
-					</li>
-					<li>
-						<p>{m.english_label()}: {m.english_level()}</p>
-					</li>
-					<li>
-						<p>{m.portuguese_label()}: {m.portuguese_level()}</p>
-					</li>
-				</ul>
-			</div>
-		</div>
+		<BentoBox
+			numCols={3}
+			backgroundColor="rgba(255, 255, 255, 0.04)"
+			items={[
+				{
+					content: education,
+					span: 2,
+					spanRow: 2,
+					accent: "var(--theme-secondary-colour)",
+				},
+				{
+					content: location,
+					span: 1,
+					accent: "var(--theme-tertiary-colour)",
+				},
+				{
+					content: languages,
+					span: 1,
+					accent: "var(--theme-quaternary-colour)",
+				},
+			]}
+		/>
 	</section>
 	<section id="tech-stack-section">
 		<header class="section-title">
@@ -121,7 +139,9 @@
 				</article>
 			{/each}
 			<article class="post">
-				<time class="post-preview-date">{m.latest_post_draft_date()}</time>
+				<time class="post-preview-date"
+					>{m.latest_post_draft_date()}</time
+				>
 				<a href={localizeHref("/blog")}>
 					{m.latest_post_draft_title()}
 				</a>
@@ -184,90 +204,66 @@
 			}
 		}
 
-		#summary-container {
-			--card-accent: var(--theme-primary-colour);
+		#summary-education-block {
+			header {
+				:global(svg),
+				h4 {
+					color: var(--theme-secondary-colour);
+				}
+			}
+		}
 
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			gap: 15px;
-			grid-template-areas:
-				"box-1 box-1 box-2"
-				"box-1 box-1 box-3";
+		#summary-location-block {
+			header {
+				:global(svg),
+				h4 {
+					color: var(--theme-tertiary-colour);
+				}
+			}
+		}
 
-			#summary-education-block {
-				--card-accent: var(--theme-secondary-colour);
+		#summary-languages-block {
+			header {
+				:global(svg),
+				h4 {
+					color: var(--theme-quaternary-colour);
+				}
 			}
 
-			#summary-location-block {
-				--card-accent: var(--theme-tertiary-colour);
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
 			}
+		}
 
-			#summary-languages-block {
-				--card-accent: var(--theme-quaternary-colour);
-			}
-
-			p {
-				font-size: 1rem;
-			}
-
-			.summary-item {
-				padding: 18px 20px;
-				border: 1px solid rgba(255, 255, 255, 0.1);
-				border-radius: 10px;
-				background-color: rgba(255, 255, 255, 0.04);
-				text-align: left;
-				color: var(--theme-text-colour);
+		#summary-education-block,
+		#summary-location-block,
+		#summary-languages-block {
+			header {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				transition:
-					transform 0.25s,
-					border-color 0.25s;
+				align-items: center;
+				gap: 7px;
+				margin-bottom: 12px;
 
-				&:hover {
-					transform: scale(1.02);
-					border-color: var(--card-accent);
-				}
-
-				header {
-					display: flex;
-					align-items: center;
-					gap: 7px;
-					margin-bottom: 12px;
-
-					h4 {
-						font-size: 1.125rem;
-						margin: 0;
-						color: var(--card-accent);
-					}
-
-					:global(svg) {
-						color: var(--card-accent);
-					}
-				}
-
-				h3 {
-					font-size: 1rem;
-					margin: 4px 0;
-				}
-
-				ul {
-					padding: 0;
+				h4 {
 					margin: 0;
-
-					li {
-						list-style: none;
-
-						p {
-							margin: 4px 0;
-						}
-					}
+					font-size: 1.125rem;
 				}
 			}
 
-			#summary-education-level {
-				font-weight: bold;
+			h3,
+			p {
+				margin: 4px 0;
 			}
+		}
+
+		p {
+			font-size: 1rem;
+		}
+
+		#summary-education-level {
+			font-weight: bold;
 		}
 	}
 
@@ -361,16 +357,6 @@
 
 			#contact-section h3 {
 				font-size: 1.125rem;
-			}
-
-			#summary-section {
-				#summary-container {
-					grid-template-columns: 1fr;
-					grid-template-areas:
-						"box-1"
-						"box-2"
-						"box-3";
-				}
 			}
 		}
 
