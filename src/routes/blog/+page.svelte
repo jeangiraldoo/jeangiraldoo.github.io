@@ -6,96 +6,39 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
-<main>
+<main class="w-1/2 max-md:w-[90%] mx-auto">
 	<Title
 		title={m.blog_label()}
 		level={1}
 		size="2.5rem"
 		colour="var(--theme-primary-colour)"
 		align="left"
+		class="max-md:text-3xl"
 	/>
-	<section id="post-preview-container" aria-label={m.latest_posts_aria()}>
+	<section
+		aria-label={m.latest_posts_aria()}
+		class="flex flex-col gap-8 mt-4"
+	>
 		{#each data.posts as post}
-			<article class="post">
+			<article class="flex flex-col gap-1">
 				<header>
 					<a href={`/blog/${post.slug}`}>
-						<h2 class="post-title">{post.title}</h2>
+						<h2 class="text-secondary text-2xl">{post.title}</h2>
 					</a>
 				</header>
 
-				<section class="post-preview-time-container">
-					<time class="post-preview-date">{post.prettyDate}</time>
-					<span class="separator">•</span>
-					<time class="post-preview-read">
+				<section class="flex gap-4 *:text-tertiary *:text-base">
+					<time>{post.prettyDate}</time>
+					<span>•</span>
+					<time>
 						{post.readingTimeMinutes} min read
 					</time>
 				</section>
 
-				<section class="post-preview-description">
-					<p>{post.description}</p>
+				<section>
+					<p class="text-base text-blue-200">{post.description}</p>
 				</section>
 			</article>
 		{/each}
 	</section>
 </main>
-
-<style>
-	main {
-		width: 50%;
-	}
-
-	#post-preview-container {
-		margin-top: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-
-		.post {
-			display: flex;
-			flex-direction: column;
-			gap: 5px;
-
-			header {
-				a {
-					display: inline-block;
-					color: hsl(175, 65%, 72%);
-				}
-
-				.post-title {
-					font-size: 1.5rem;
-					margin: 0;
-				}
-			}
-
-			.post-preview-time-container {
-				display: flex;
-				gap: 10px;
-
-				.post-preview-date,
-				.post-preview-read,
-				.separator {
-					color: var(--theme-tertiary-colour);
-					font-size: 0.875rem;
-				}
-			}
-
-			.post-preview-description {
-				p {
-					color: #b4cae0;
-					margin: 0;
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-
-	@media (max-width: 768px) {
-		main {
-			width: 90%;
-		}
-
-		:global(.title h1) {
-			font-size: 1.75rem;
-		}
-	}
-</style>

@@ -1,3 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(192, 100%, 50%);
+  --color-secondary: hsl(166, 92%, 52%);
+  --color-tertiary: hsl(260, 70%, 68%);
+  --color-quaternary: hsl(40, 85%, 55%);
+}
+
 :root {
   --theme-primary-colour: hsl(192, 100%, 50%);
   --theme-secondary-colour: hsl(166, 92%, 52%);
@@ -13,41 +22,9 @@
   --theme-primary-colour: black;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   background-color: var(--theme-bg-colour);
   font-family: "Space Mono", monospace;
   margin: 0;
   min-width: 0;
-}
-
-main {
-  margin: 0 auto;
-  width: min(70%, 100%);
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-h1,
-h2 {
-  margin: 0px;
-}
-
-a {
-  text-decoration: none;
-}
-
-@media (max-width: 900px) {
-  main {
-    width: 90%;
-  }
 }

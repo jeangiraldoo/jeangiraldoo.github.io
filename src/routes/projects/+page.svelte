@@ -29,31 +29,41 @@
 	}
 </script>
 
-<main>
+<main class="w-3/4 max-md:w-[90%] max-md:max-w-[415px] flex flex-col gap-8 my-10 mx-auto">
 	<Title
 		title={m.projects_label()}
 		level={1}
 		size="2.5rem"
 		colour="var(--theme-primary-colour)"
 		align="left"
+		class="max-md:text-3xl"
 	/>
-	<div id="projects-container">
+	<div class="grid grid-cols-3 gap-4 max-md:grid-cols-1">
 		{#each projects as project}
-			<article class="project">
+			<article
+				class="flex flex-col w-full rounded-lg border border-white/10 transition-transform hover:scale-[1.021]"
+			>
 				<img
 					src={project.image_path}
 					alt={get_message(project.message_keys.name)()}
+					class="h-44 w-auto shrink-0 rounded-lg max-md:h-auto max-md:w-full max-md:object-cover"
 				/>
 
-				<div class="project-info">
-					<header class="project-header">
-						<h2>{get_message(project.message_keys.name)()}</h2>
+				<div class="flex flex-col p-2.5 gap-5 bg-white/5 w-full flex-1 min-w-0">
+					<header class="flex flex-wrap items-center gap-[2%]">
+						<h2
+							class="text-3xl m-0 min-h-[4.2rem] flex items-center max-md:text-xl max-md:min-h-0"
+						>
+							{get_message(project.message_keys.name)()}
+						</h2>
 					</header>
 
 					<!-- <p class="project-description"> -->
 					<!-- 	{project.description} -->
 					<!-- </p> -->
-					<p class="project-description">
+					<p
+						class="my-0 hyphens-auto text-base text-[var(--theme-text-colour)] min-h-[4.5em] max-md:min-h-0 max-md:text-sm"
+					>
 						{get_message(project.message_keys.description)()}
 					</p>
 
@@ -63,7 +73,7 @@
 					/>
 					{#if project.source_code}
 						<LinkIcon
-							class="project-link"
+							class="mt-auto justify-center px-3.5 py-2 rounded-md bg-[var(--theme-secondary-colour)] transition-colors hover:bg-[hsl(166,92%,78%)] [&_svg]:size-4"
 							href={project.source_code}
 							label={m.code_link_label()}
 							labelColour="white"
@@ -78,133 +88,3 @@
 		{/each}
 	</div>
 </main>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		gap: 30px;
-		margin: 40px auto;
-	}
-
-	h2 {
-		font-size: 1.75rem;
-	}
-
-	#projects-container {
-		display: grid;
-		grid-template-columns: repeat(3, 0.5fr);
-		gap: 15px;
-
-		.project {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			border-radius: 10px;
-			transition: transform 0.3s;
-			border: 1px solid rgba(255, 255, 255, 0.1);
-
-			&:hover {
-				transform: scale(1.021, 1.021);
-			}
-
-			img {
-				/* max-width: 400px; */
-				width: auto;
-				height: 180px;
-				flex-shrink: 0;
-				border-radius: 10px;
-			}
-
-			.project-info {
-				display: flex;
-				background-color: rgba(255, 255, 255, 0.05);
-				flex-direction: column;
-				padding: 10px;
-				gap: 20px;
-				width: 100%;
-				flex: 1;
-				min-width: 0;
-
-				.project-header {
-					display: flex;
-					flex-wrap: wrap;
-					gap: 2%;
-					align-items: center;
-
-					h2 {
-						font-size: 1.75rem;
-						margin: 0;
-						min-height: 4.2rem;
-						display: flex;
-						align-items: center;
-					}
-				}
-
-				.project-description {
-					margin: 0;
-					hyphens: auto;
-					font-size: 1rem;
-					color: var(--theme-text-colour);
-					min-height: 4.5em;
-				}
-
-				:global(.project-link) {
-					margin-top: auto;
-
-					justify-content: center;
-					padding: 8px 14px;
-					border-radius: 6px;
-					background-color: var(--theme-secondary-colour);
-					transition: background-color 0.2s;
-
-					&:hover {
-						background-color: hsl(166, 92%, 78%);
-					}
-
-					:global(svg) {
-						width: 1.1em;
-						height: 1.1em;
-					}
-				}
-			}
-		}
-	}
-
-	@media (max-width: 768px) {
-		main {
-			width: 90%;
-			max-width: 415px;
-		}
-
-		:global(.title h1) {
-			font-size: 1.75rem;
-		}
-
-		#projects-container {
-			grid-template-columns: 1fr;
-		}
-
-		.project {
-			img {
-				width: 100%;
-				height: auto;
-				object-fit: cover;
-			}
-
-			.project-info {
-				.project-header {
-					h2 {
-						font-size: 1.25rem;
-						min-height: 0;
-					}
-				}
-
-				.project-description {
-					font-size: 0.875rem;
-					min-height: 0;
-				}
-			}
-		}
-	}
-</style>

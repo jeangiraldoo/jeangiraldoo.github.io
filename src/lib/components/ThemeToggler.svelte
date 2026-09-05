@@ -19,19 +19,9 @@
 	}
 </script>
 
-<button id="theme-toggle" onclick={toggleTheme}>
+<button
+	class="ml-auto order-2 max-md:order-1 bg-transparent border-none [&_svg]:size-7 cursor-pointer"
+	onclick={toggleTheme}
+>
 	<LightbulbLogo />
 </button>
-
-<style>
-	#theme-toggle :global(svg) {
-		width: 26px;
-		height: 26px;
-	}
-
-	#theme-toggle {
-		margin-left: auto;
-		background: none;
-		border: none;
-	}
-</style>

@@ -4,13 +4,14 @@
 	import Title from "$lib/components/Title.svelte";
 </script>
 
-<main>
+<main class="w-3/4 max-md:w-[90%] flex flex-col gap-12 my-10 mx-auto">
 	<Title
 		title={m.about_label()}
 		level={1}
 		size="2.5rem"
 		colour="var(--theme-primary-colour)"
 		align="left"
+		class="max-md:text-3xl"
 	/>
 	<section id="background-section">
 		<p><RichMessage message={m.about_background_intro} /></p>
@@ -26,6 +27,7 @@
 			size="1.75rem"
 			colour="var(--theme-primary-colour)"
 			align="left"
+			class="max-md:text-xl"
 		/>
 		<ul id="education-container">
 			<li class="education-instance">
@@ -52,6 +54,7 @@
 			size="1.75rem"
 			colour="var(--theme-primary-colour)"
 			align="left"
+			class="max-md:text-xl"
 		/>
 		<ul id="languages-container">
 			<li>
@@ -76,6 +79,7 @@
 			size="1.75rem"
 			colour="var(--theme-primary-colour)"
 			align="left"
+			class="max-md:text-xl"
 		/>
 		<ul id="hobbies-container">
 			<li>
@@ -95,13 +99,6 @@
 </main>
 
 <style>
-	main {
-		display: flex;
-		flex-direction: column;
-		gap: 50px;
-		margin: 40px auto;
-	}
-
 	section {
 		display: flex;
 		flex-direction: column;
@@ -192,18 +189,6 @@
 	}
 
 	@media (max-width: 768px) {
-		main {
-			width: 90%;
-		}
-
-		:global(.title h1) {
-			font-size: 1.75rem;
-		}
-
-		:global(.title h2) {
-			font-size: 1.25rem;
-		}
-
 		section ul h3 {
 			font-size: 1.125rem;
 		}

@@ -9,7 +9,8 @@
 	],
 	"Frameworks": [
 		"Svelte",
-		"SvelteKit"
+		"SvelteKit",
+		"Tailwind"
 	],
 	"Databases": [
 		"PostgreSQL"

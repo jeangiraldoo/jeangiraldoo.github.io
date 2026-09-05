@@ -2,7 +2,7 @@
 	import type { Component } from "svelte";
 
 	interface Props {
-		id?: string | null;
+		class?: string;
 		backgroundColor: string;
 		hoverBackgroundColor: string;
 		message: string;
@@ -12,7 +12,7 @@
 	}
 
 	const {
-		id = null,
+		class: className,
 		message,
 		href,
 		backgroundColor,
@@ -23,8 +23,7 @@
 </script>
 
 <a
-	{id}
-	class="button"
+	class={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-xl text-[var(--theme-bg-colour)] bg-[var(--background-color)] transition-[transform,background-color] hover:scale-[1.035] hover:bg-[var(--hover-background-colour)] [&_svg]:size-5 ${className ?? ""}`}
 	style:--background-color={backgroundColor}
 	style:--hover-background-colour={hoverBackgroundColor}
 	{href}
@@ -41,31 +40,3 @@
 		{/if}
 	{/if}
 </a>
-
-<style>
-	.button {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5em;
-		padding: 12px 24px;
-		border-radius: 10px;
-		color: var(--theme-bg-colour);
-		font-size: 1.25rem;
-		font-weight: bold;
-		background-color: var(--background-color);
-		transition:
-			transform 0.2s,
-			background-color 0.3s;
-
-		&:hover {
-			transform: scale(1.035, 1.035);
-			background-color: var(--hover-background-colour);
-		}
-	}
-
-	.button :global(svg) {
-		width: 1.25em;
-		height: 1.25em;
-		color: inherit;
-	}
-</style>

@@ -15,7 +15,6 @@
 		let nav = document.getElementById("panel");
 
 		isDisplayed = !isDisplayed;
-		console.log(isDisplayed);
 
 		if (nav == null) {
 			return;
@@ -27,74 +26,24 @@
 	}
 </script>
 
-<div id="container">
-	<button id="burguerNavBtn" onclick={toggleBurguerNav}>
+<div
+	class="relative flex-1 max-md:order-3 max-md:flex-none"
+>
+	<button
+		class="hidden bg-transparent border-none max-md:flex max-md:relative max-md:z-30 [&_svg]:text-primary cursor-pointer"
+		onclick={toggleBurguerNav}
+	>
 		{#if isDisplayed}
 			<XIcon />
 		{:else}
 			<MenuIcon />
 		{/if}
 	</button>
-	<div id="panel">
+	<div
+		id="panel"
+		class="flex rounded-[9px] gap-5 max-md:fixed max-md:items-center max-md:hidden max-md:flex-col max-md:gap-32 max-md:pt-8 max-md:justify-center max-md:right-0 max-md:bottom-0 max-md:top-0 max-md:bg-[#2c4770] max-md:w-1/2 max-md:min-w-min max-md:overflow-y-auto"
+	>
 		<NavBar />
 		<LanguagePicker />
 	</div>
 </div>
-
-<style>
-	#burguerNavBtn {
-		display: none;
-		background: none;
-		border: none;
-
-		:global(svg) {
-			color: var(--theme-primary-colour);
-		}
-	}
-
-	#container {
-		position: relative;
-
-		#panel {
-			border-radius: 9px;
-			display: flex;
-			gap: 20px;
-
-			:global(.language-picker) {
-				margin-left: auto;
-			}
-		}
-	}
-
-	@media (max-width: 800px) {
-		#container {
-			#panel {
-				position: fixed;
-				align-items: center;
-				display: none;
-				flex-direction: column;
-				left: auto;
-				gap: 8rem;
-				padding-top: 2rem;
-				justify-content: center;
-				right: 0;
-				bottom: 0;
-				top: 0;
-				background-color: #2c4770;
-				width: 50%;
-				min-width: min-content;
-				overflow-y: auto;
-
-				:global(#language-picker) {
-					order: 0;
-				}
-			}
-		}
-
-		#burguerNavBtn {
-			display: flex;
-			position: relative;
-			z-index: 30;
-		}
-	}
-</style>

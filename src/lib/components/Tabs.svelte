@@ -16,8 +16,12 @@
 	let activeIndex = $state(0);
 </script>
 
-<div class="tabs">
-	<div class="tabs-nav" role="tablist" aria-label={ariaLabel}>
+<div class="flex flex-col gap-5">
+	<div
+		class="flex flex-wrap gap-2.5 justify-center"
+		role="tablist"
+		aria-label={ariaLabel}
+	>
 		{#each tabs as tab, i (i)}
 			<button
 				type="button"
@@ -25,8 +29,8 @@
 				id={`${i}-tab`}
 				aria-selected={i === activeIndex}
 				aria-controls={`${i}-panel`}
-				class="tabs-nav-button"
-				class:active={i === activeIndex}
+				class="px-4 py-2 rounded-md border-none bg-[var(--theme-bg-colour)] text-[darkgrey] font-bold text-base cursor-pointer transition-[transform,background-color] hover:scale-[1.035]"
+				class:text-primary={i === activeIndex}
 				onclick={() => (activeIndex = i)}
 			>
 				{tab.label}
@@ -35,7 +39,6 @@
 	</div>
 
 	<div
-		class="tab-panel"
 		role="tabpanel"
 		id={`${activeIndex}-panel`}
 		aria-labelledby={`${activeIndex}-tab`}
@@ -43,41 +46,3 @@
 		{@render tabs[activeIndex].content()}
 	</div>
 </div>
-
-<style>
-	.tabs {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-
-	.tabs-nav {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		justify-content: center;
-
-		.tabs-nav-button {
-			padding: 8px 16px;
-			border-radius: 6px;
-			border: none;
-			background-color: var(--theme-bg-colour);
-			color: darkgrey;
-			font-family: inherit;
-			font-weight: bold;
-			font-size: 1rem;
-			cursor: pointer;
-			transition:
-				transform 0.2s,
-				background-color 0.3s;
-
-			&:hover {
-				transform: scale(1.035, 1.035);
-			}
-
-			&.active {
-				color: var(--theme-primary-colour);
-			}
-		}
-	}
-</style>

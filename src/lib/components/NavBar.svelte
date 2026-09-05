@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { localizeHref } from "$lib/paraglide/runtime";
-	import LanguagePicker from "$lib/components/LanguagePicker.svelte";
 	import { page } from "$app/state";
 	import { m } from "$lib/paraglide/messages.js";
-	import MenuIcon from "@lucide/svelte/icons/square-menu";
-	import XIcon from "@lucide/svelte/icons/square-x";
 
 	let currentPage = $derived(page.url.pathname);
 
@@ -20,70 +17,15 @@
 	}
 </script>
 
-<nav>
+<nav class="flex flex-wrap gap-5 max-md:flex-col max-md:items-center max-md:gap-12 max-md:order-1">
 	{#each Object.entries(pages) as [path, message]}
 		<a
 			href={localizeHref(path)}
 			aria-current={isWithinPath(path) ? "page" : undefined}
-			class:selected-link={isWithinPath(path)}
+			class="flex items-center text-white text-xl hover:text-secondary max-md:text-2xl max-md:text-black"
+			class:text-secondary={isWithinPath(path)}
 		>
 			{message()}
 		</a>
 	{/each}
 </nav>
-
-<style>
-	nav {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
-
-		a {
-			display: flex;
-			align-items: center;
-			color: white;
-			font-size: var(--header-font-size);
-
-			&:hover {
-				color: var(--theme-secondary-colour);
-			}
-		}
-
-		.selected-link {
-			color: var(--theme-secondary-colour);
-		}
-	}
-
-	:global(.language-picker) {
-		margin-left: auto;
-	}
-
-	:global(svg) {
-		width: 2rem;
-		height: 2rem;
-		color: white;
-	}
-
-	@media (max-width: 800px) {
-		nav {
-			gap: 3rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			order: 1;
-
-			a {
-				font-size: 1.5rem;
-				color: black;
-			}
-
-			.selected-link {
-				color: var(--theme-secondary-colour);
-			}
-		}
-
-		:global(#language-picker) {
-			order: 0;
-		}
-	}
-</style>

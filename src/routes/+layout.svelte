@@ -8,9 +8,16 @@
 	import HeaderMenu from "$lib/components/HeaderMenu.svelte";
 </script>
 
-<div class="page">
-	<header>
-		<a id="home-link" href={localizeHref("/")}>Jean Giraldo</a>
+<div class="page min-h-dvh grid grid-rows-[auto_1fr]">
+	<header
+		class="relative flex flex-wrap items-center px-5 gap-x-[30px] gap-y-2.5 max-md:px-2.5 max-md:gap-x-2.5"
+	>
+		<a
+			href={localizeHref("/")}
+			class="text-[var(--theme-primary-colour)] text-2xl"
+		>
+			Jean Giraldo
+		</a>
 
 		<HeaderMenu />
 		<ThemeToggler />
@@ -18,7 +25,7 @@
 	<slot></slot>
 </div>
 
-<div style="display:none">
+<div class="hidden">
 	{#each locales as locale (locale)}
 		<a
 			href={resolve(
@@ -27,70 +34,3 @@
 		>
 	{/each}
 </div>
-
-<style>
-	header {
-		display: flex;
-		flex-wrap: wrap;
-		padding: 0 20px;
-		align-items: center;
-		column-gap: 30px;
-		row-gap: 10px;
-		position: relative;
-		--header-font-size: 1.25rem;
-		--header-height: 3.5rem;
-
-		#home-link {
-			color: var(--theme-primary-colour);
-			font-size: 1.5rem;
-			order: 0;
-		}
-
-		:global(#container) {
-			order: 1;
-			flex: 1;
-		}
-
-		:global(#theme-toggle) {
-			order: 2;
-		}
-
-		:global(#language-picker) {
-			order: 3;
-			margin-left: auto;
-		}
-	}
-
-	.page {
-		min-height: 100vh;
-		display: grid;
-		grid-template-rows: auto 1fr;
-	}
-
-	@supports (height: 100dvh) {
-		.page {
-			min-height: 100dvh;
-		}
-	}
-
-	@media (max-width: 800px) {
-		header {
-			padding: 0 10px;
-			column-gap: 10px;
-
-			:global(#container) {
-				order: 3;
-				flex: none;
-			}
-
-			:global(#theme-toggle) {
-				order: 1;
-			}
-
-			:global(#language-picker) {
-				order: 2;
-				margin: 0;
-			}
-		}
-	}
-</style>

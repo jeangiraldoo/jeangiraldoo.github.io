@@ -8,18 +8,24 @@
 	import linkedinLogo from "$lib/icons/linkedin.svg?raw";
 </script>
 
-<main>
+<main
+	class="w-3/4 max-md:w-[90%] min-h-dvh mx-auto pt-6 flex flex-col justify-center items-center gap-8"
+>
 	<Title
 		title={m.contact_title()}
 		level={1}
 		size="2.5rem"
 		colour="var(--theme-primary-colour)"
+		class="max-md:text-3xl"
 	/>
-	<div id="description">
+	<div id="description" class="flex flex-col gap-4">
 		<p><RichMessage message={m.contact_intro} /></p>
 		<p><RichMessage message={m.contact_find_me} /></p>
 	</div>
-	<nav aria-label={m.social_links_aria()}>
+	<nav
+		aria-label={m.social_links_aria()}
+		class="flex justify-center items-center gap-8 max-md:flex-wrap max-md:gap-5"
+	>
 		<a href="mailto:jeangiraldoo@gmail.com">
 			<EmailLogo />
 			<span>{m.email_label()}</span>
@@ -41,23 +47,7 @@
 
 <style>
 	main {
-		min-height: 100dvh;
-		width: 70%;
-		margin: 0 auto;
-		padding-top: var(--content-offset, 24px);
-		box-sizing: border-box;
-
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 40px;
-
 		#description {
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-
 			p {
 				margin: 0;
 				color: var(--theme-text-colour);
@@ -70,11 +60,6 @@
 		}
 
 		nav {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 50px;
-
 			a {
 				display: flex;
 				align-items: center;
@@ -101,27 +86,6 @@
 					}
 				}
 			}
-		}
-	}
-
-	@supports not (height: 100dvh) {
-		main {
-			min-height: 100vh;
-		}
-	}
-
-	@media (max-width: 768px) {
-		main {
-			width: 90%;
-		}
-
-		:global(.title h1) {
-			font-size: 1.75rem;
-		}
-
-		nav {
-			flex-wrap: wrap;
-			gap: 20px;
 		}
 	}
 </style>

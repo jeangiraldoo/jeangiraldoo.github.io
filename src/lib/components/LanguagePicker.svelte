@@ -29,7 +29,6 @@
 
 		function on_key(event: KeyboardEvent) {
 			if (event.key === "Escape") open = false;
-			console.log("pressed escape");
 		}
 
 		document.addEventListener("click", on_click);
@@ -41,30 +40,32 @@
 	});
 </script>
 
-<div id="language-picker" bind:this={root}>
+<div bind:this={root} class="relative inline-flex ml-auto max-md:order-0 max-md:m-0">
 	<button
 		type="button"
-		class="picker-trigger"
 		aria-expanded={open}
 		aria-label={m.language_picker_aria()}
+		class="inline-flex items-center gap-2 bg-[var(--theme-secondary-colour)] text-black rounded-full py-[0.4rem] pl-4 pr-3 text-xl cursor-pointer"
 		onclick={() => (open = !open)}
 	>
-		<span class="picker-flag" aria-hidden="true">
+		<span class="inline-flex [&_svg]:size-5" aria-hidden="true">
 			{@html flags[current]}
 		</span>
 		{labels[current]()}
 	</button>
 
 	{#if open}
-		<div class="picker-list">
+		<div
+			class="absolute top-[calc(100%+0.35rem)] end-0 min-w-full flex flex-col p-1.5 bg-[var(--theme-bg-colour)] rounded-xl shadow-[0_8px_24px_hsl(0_0%_0%_/_0.35)] z-20"
+		>
 			{#each locales as l (l)}
 				<button
 					type="button"
-					class="picker-option"
-					class:selected={l === current}
+					class="flex items-center gap-2 w-full px-2.5 py-2 bg-transparent rounded-lg text-white text-xl text-left whitespace-nowrap cursor-pointer hover:bg-white/12 focus-visible:bg-white/12"
+					class:font-bold={l === current}
 					onclick={() => pick(l)}
 				>
-					<span class="picker-flag" aria-hidden="true">
+					<span class="inline-flex [&_svg]:size-5" aria-hidden="true">
 						{@html flags[l]}
 					</span>
 					{labels[l]()}
@@ -73,80 +74,3 @@
 		</div>
 	{/if}
 </div>
-
-<style>
-	#language-picker {
-		position: relative;
-		display: inline-flex;
-	}
-
-	.picker-trigger {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		background-color: var(--theme-secondary-colour);
-		color: black;
-		border: none;
-		border-radius: 9999px;
-		padding: 0.4rem 0.75rem 0.4rem 1rem;
-		font-family: inherit;
-		font-size: var(--header-font-size);
-		cursor: pointer;
-	}
-
-	.picker-flag {
-		display: inline-flex;
-		color: white;
-	}
-
-	.picker-flag :global(svg) {
-		width: 1.25rem;
-		height: 1.25rem;
-	}
-
-	.picker-list {
-		position: absolute;
-		top: calc(100% + 0.35rem);
-		inset-inline-end: 0;
-		min-width: 100%;
-		display: flex;
-		flex-direction: column;
-		padding: 0.3rem;
-		background-color: var(--theme-bg-colour);
-		border-radius: 12px;
-		box-shadow: 0 8px 24px hsl(0 0% 0% / 0.35);
-		z-index: 20;
-	}
-
-	.picker-option {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		width: 100%;
-		padding: 0.45rem 0.7rem;
-		background: none;
-		border: none;
-		border-radius: 8px;
-		color: white;
-		font-family: inherit;
-		font-size: var(--header-font-size);
-		text-align: left;
-		white-space: nowrap;
-		cursor: pointer;
-	}
-
-	.picker-option:hover,
-	.picker-option:focus-visible {
-		background-color: hsl(0 0% 100% / 0.12);
-	}
-
-	.picker-option.selected {
-		font-weight: bold;
-	}
-
-	@media (max-width: 800px) {
-		.picker-trigger {
-			font-size: 1.3rem;
-		}
-	}
-</style>

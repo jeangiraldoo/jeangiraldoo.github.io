@@ -37,7 +37,7 @@
 				colour="var(--theme-quaternary-colour)"
 			/>
 		</header>
-		<ul id="languages-container">
+		<ul>
 			<li>
 				<p>{m.spanish_label()}: {m.native_level()}</p>
 			</li>
@@ -63,7 +63,7 @@
 				iconBackgroundColour="var(--theme-secondary-colour)"
 			/>
 		</header>
-		<h3 id="summary-education-level">
+		<h3 class="font-bold">
 			{m.education_systems_degree()}
 		</h3>
 		<h3>{m.education_systems_date()}</h3>
@@ -88,12 +88,18 @@
 	</div>
 {/snippet}
 
-<main>
-	<section id="landing-section">
-		<img src="/images/profile.jpeg" alt="Jean Giraldo" />
-		<h1>Jean Giraldo</h1>
-		<h2>{m.job_title()}</h2>
-		<div id="buttons">
+<main
+	class="w-3/4 max-lg:w-[90%] mx-auto flex flex-col justify-center text-center gap-18 max-sm:gap-12 h-full min-w-0 pb-[15vh] max-sm:pb-[5vh]"
+>
+	<section class="flex flex-col items-center">
+		<img
+			src="/images/profile.jpeg"
+			alt="Jean Giraldo"
+			class="size-64 rounded-2xl"
+		/>
+		<h1 class="text-white text-4xl mt-8 max-sm:text-3xl">Jean Giraldo</h1>
+		<h2 class="text-primary text-3xl max-sm:text-xl">{m.job_title()}</h2>
+		<div class="flex flex-wrap gap-4 mt-4">
 			<Button
 				href={localizeHref("/contact")}
 				message={m.contact_me_home_button()}
@@ -108,16 +114,17 @@
 			/>
 		</div>
 	</section>
-	<section id="summary-section">
+	<section>
 		<Title
 			level={3}
 			size="1.375rem"
 			title={m.summary_label()}
 			Icon={CrownIcon}
+			class="max-sm:text-lg"
 		/>
 		<BentoBox
 			numCols={3}
-			backgroundColor="rgba(255, 255, 255, 0.04)"
+			backgroundColour="rgba(255, 255, 255, 0.04)"
 			items={[
 				{
 					content: education,
@@ -138,198 +145,82 @@
 			]}
 		/>
 	</section>
-	<section id="tech-stack-section">
+	<section>
 		<Title
 			level={3}
 			size="1.375rem"
 			title={m.techstack_title_label()}
 			Icon={ToolBoxLogo}
+			class="max-sm:text-lg"
 		/>
 		<TechStack />
 	</section>
-	<section id="blog-section" aria-label={m.latest_posts_aria()}>
+	<section aria-label={m.latest_posts_aria()}>
 		<Title
 			level={3}
 			size="1.375rem"
 			title={m.latest_posts_label()}
 			Icon={BookOpenIcon}
+			class="max-sm:text-lg"
 		/>
-		<div id="latest-posts-container">
+		<div class="flex flex-col self-center">
 			{#each data.posts as post}
-				<article class="post">
-					<time class="post-preview-date">{post.prettyDate}</time>
-					<a href={localizeHref(`/blog/${post.slug}`)}>
+				<article
+					class="flex flex-wrap gap-4 transition-transform hover:scale-[1.03]"
+				>
+					<time class="text-secondary text-xl">{post.prettyDate}</time
+					>
+					<a
+						href={localizeHref(`/blog/${post.slug}`)}
+						class="text-white text-xl underline"
+					>
 						{post.title}
 					</a>
 				</article>
 			{/each}
-			<article class="post">
-				<time class="post-preview-date"
-					>{m.latest_post_draft_date()}</time
-				>
-				<a href={localizeHref("/blog")}>
-					{m.latest_post_draft_title()}
-				</a>
-			</article>
 		</div>
 	</section>
-	<section id="contact-section">
+	<section>
 		<Title
 			level={3}
 			size="1.375rem"
 			title={m.home_contact_cta()}
 			Icon={EarthLogo}
+			class="max-sm:text-lg"
 		/>
 
 		<Button
-			id="alternate-get-in-touch-button"
+			class="self-center"
 			href={localizeHref("/contact")}
 			message={m.home_contact_cta_button()}
 			icon={HandshakeLogo}
 			iconPosition="right"
 			backgroundColor="var(--theme-quaternary-colour)"
-			hoverBackgroundColor="hsl(40, 85%, 78%);"
+			hoverBackgroundColor="hsl(40, 85%, 78%)"
 		/>
 	</section>
 </main>
 
 <style>
-	main {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-		height: 100%;
-		gap: 70px;
-		box-sizing: border-box;
-		padding-bottom: 15vh;
-		min-width: 0;
-
-		h1 {
-			color: var(--theme-text-colour);
-			font-size: 2.5rem;
-			margin: 30px 0 0 0;
-		}
-
-		#summary-languages-block {
-			ul {
-				padding: 0;
-				margin: 0;
-				list-style: none;
-			}
-		}
-
-		#summary-education-block,
-		#summary-location-block,
-		#summary-languages-block {
-			header {
-				display: flex;
-				align-items: center;
-				gap: 7px;
-				margin-bottom: 12px;
-			}
-
-			h3,
-			p {
-				margin: 4px 0;
-			}
-		}
-
-		p {
-			font-size: 1rem;
-		}
-
-		#summary-education-level {
-			font-weight: bold;
-		}
-	}
-
-	#blog-section {
-		#latest-posts-container {
+	#summary-education-block,
+	#summary-location-block,
+	#summary-languages-block {
+		header {
 			display: flex;
-			flex-direction: column;
-			align-self: center;
-
-			.post {
-				display: flex;
-				gap: 15px;
-				transition: transform 0.3s;
-				flex-wrap: wrap;
-
-				&:hover {
-					transform: scale(1.03, 1.03);
-				}
-
-				a {
-					color: white;
-					text-decoration: underline;
-				}
-
-				time {
-					color: var(--theme-secondary-colour);
-				}
-
-				a,
-				time {
-					font-size: 1.2rem;
-				}
-			}
+			align-items: center;
+			gap: 7px;
+			margin-bottom: 12px;
 		}
-	}
 
-	#landing-section {
-		display: flex;
-		align-items: center;
-		img {
-			width: 250px;
-			height: 250px;
-			border-radius: 20px;
+		h3,
+		p {
+			margin: 4px 0;
 		}
-		h2 {
-			color: var(--theme-primary-colour);
-			font-size: 1.75rem;
-		}
-	}
-
-	:global(#alternate-get-in-touch-button) {
-		align-self: center;
-	}
-
-	#buttons {
-		display: flex;
-		justify-content: center;
-		gap: 20px;
-		margin-top: 30px;
 	}
 
 	section {
 		display: flex;
 		flex-direction: column;
 		gap: 40px;
-	}
-
-	@media (max-width: 600px) {
-		main {
-			width: 90%;
-			padding-bottom: 5vh;
-			gap: 50px;
-
-			h1 {
-				font-size: 1.75rem;
-			}
-
-			h2 {
-				font-size: 1.25rem;
-			}
-		}
-
-		:global(.title h3) {
-			font-size: 1.125rem;
-		}
-
-		#buttons {
-			flex-wrap: wrap;
-			gap: 15px;
-		}
 	}
 </style>
