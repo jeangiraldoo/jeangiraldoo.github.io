@@ -2,6 +2,7 @@
 	import { m } from "$lib/paraglide/messages.js";
 	import type { PageData } from "./$types";
 	import Title from "$lib/components/Title.svelte";
+	import BlogPreview from "$lib/components/BlogPreview.svelte";
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -15,30 +16,5 @@
 		align="left"
 		class="max-md:text-3xl"
 	/>
-	<section
-		aria-label={m.latest_posts_aria()}
-		class="flex flex-col gap-8 mt-4"
-	>
-		{#each data.posts as post}
-			<article class="flex flex-col gap-1">
-				<header>
-					<a href={`/blog/${post.slug}`}>
-						<h2 class="text-secondary text-2xl">{post.title}</h2>
-					</a>
-				</header>
-
-				<section class="flex gap-4 *:text-tertiary *:text-base">
-					<time>{post.prettyDate}</time>
-					<span>•</span>
-					<time>
-						{post.readingTimeMinutes} min read
-					</time>
-				</section>
-
-				<section>
-					<p class="text-base text-blue-200">{post.description}</p>
-				</section>
-			</article>
-		{/each}
-	</section>
+	<BlogPreview layout="block" />
 </main>

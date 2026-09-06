@@ -6,6 +6,7 @@
 	import Button from "$lib/components/Button.svelte";
 	import BentoBox from "$lib/components/BentoBox.svelte";
 	import Title from "$lib/components/Title.svelte";
+	import BlogPreview from "$lib/components/BlogPreview.svelte";
 
 	import CrownIcon from "@lucide/svelte/icons/crown";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
@@ -16,9 +17,7 @@
 	import EarthLogo from "@lucide/svelte/icons/earth";
 	import HandshakeLogo from "@lucide/svelte/icons/handshake";
 
-	import type { PageData } from "./$types";
-
-	let { data }: { data: PageData } = $props();
+	const totalPreviewPosts = 5;
 </script>
 
 <svelte:head>
@@ -163,22 +162,7 @@
 			Icon={BookOpenIcon}
 			class="max-sm:text-lg"
 		/>
-		<div class="flex flex-col self-center">
-			{#each data.posts as post}
-				<article
-					class="flex flex-wrap gap-4 transition-transform hover:scale-[1.03]"
-				>
-					<time class="text-secondary text-xl">{post.prettyDate}</time
-					>
-					<a
-						href={localizeHref(`/blog/${post.slug}`)}
-						class="text-white text-xl underline"
-					>
-						{post.title}
-					</a>
-				</article>
-			{/each}
-		</div>
+		<BlogPreview totalPosts={totalPreviewPosts} layout="line" />
 	</section>
 	<section>
 		<Title
