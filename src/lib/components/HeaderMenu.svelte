@@ -26,9 +26,7 @@
 	}
 </script>
 
-<div
-	class="relative flex-1 max-md:order-3 max-md:flex-none"
->
+<div class="relative flex-1 max-md:order-3 max-md:flex-none">
 	<button
 		class="hidden bg-transparent border-none max-md:flex max-md:relative max-md:z-30 [&_svg]:text-primary cursor-pointer"
 		onclick={toggleBurguerNav}
