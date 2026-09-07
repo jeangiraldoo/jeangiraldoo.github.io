@@ -10,7 +10,8 @@
 			"Lua",
 			"Treesitter"
 		],
-		"source_code": "https://github.com/jeangiraldoo/codedocs.nvim"
+		"source_code": "https://github.com/jeangiraldoo/codedocs.nvim",
+		"featured": true
 	},
 	{
 		"image_path": "/images/projects/personal_website.png",
@@ -27,6 +28,7 @@
 			"HTML",
 			"CSS"
 		],
-		"source_code": "https://github.com/jeangiraldoo/jeangiraldoo.github.io"
+		"source_code": "https://github.com/jeangiraldoo/jeangiraldoo.github.io",
+		"featured": true
 	}
 ]
