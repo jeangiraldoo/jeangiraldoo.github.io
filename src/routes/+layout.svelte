@@ -18,6 +18,8 @@
 
 		isLightModeOn = theme === "light-mode";
 	});
+
+	let { children } = $props();
 </script>
 
 <div class="page min-h-dvh grid grid-rows-[auto_1fr]">
@@ -54,7 +56,8 @@
 			</Toggle>
 		</div>
 	</header>
-	<slot></slot>
+
+	{@render children()}
 </div>
 
 <div class="hidden">
