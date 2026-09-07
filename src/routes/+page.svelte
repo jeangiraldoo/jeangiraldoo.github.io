@@ -104,14 +104,12 @@
 			<Button
 				href={localizeHref("/contact")}
 				message={m.contact_me_home_button()}
-				backgroundColor="var(--theme-primary-colour)"
-				hoverBackgroundColor="hsl(192, 100%, 78%)"
+				class="px-6 py-3 rounded-lg font-bold text-xl text-[var(--theme-bg-colour)] bg-[var(--theme-primary-colour)] transition-[transform,background-color] hover:scale-[1.035] hover:bg-[hsl(192,100%,78%)] [&_svg]:size-5"
 			/>
 			<Button
 				href={localizeHref("/projects")}
 				message={m.view_projects_home_button()}
-				backgroundColor="var(--theme-secondary-colour)"
-				hoverBackgroundColor="hsl(166, 92%, 78%)"
+				class="px-6 py-3 rounded-lg font-bold text-xl text-[var(--theme-bg-colour)] bg-[var(--theme-secondary-colour)] transition-[transform,background-color] hover:scale-[1.035] hover:bg-[hsl(166,92%,78%)] [&_svg]:size-5"
 			/>
 		</div>
 	</section>
@@ -186,13 +184,11 @@
 		/>
 
 		<Button
-			class="self-center"
+			class="self-center px-6 py-3 rounded-lg font-bold text-xl text-[var(--theme-bg-colour)] bg-[var(--theme-quaternary-colour)] transition-[transform,background-color] hover:scale-[1.035] hover:bg-[hsl(40,85%,78%)] [&_svg]:size-5"
 			href={localizeHref("/contact")}
 			message={m.home_contact_cta_button()}
 			icon={HandshakeLogo}
 			iconPosition="right"
-			backgroundColor="var(--theme-quaternary-colour)"
-			hoverBackgroundColor="hsl(40, 85%, 78%)"
 		/>
 	</section>
 </main>

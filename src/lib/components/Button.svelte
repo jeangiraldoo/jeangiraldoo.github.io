@@ -3,40 +3,21 @@
 
 	interface Props {
 		class?: string;
-		backgroundColor: string;
-		hoverBackgroundColor: string;
-		message: string;
 		href: string;
+		message: string;
 		icon?: Component;
 		iconPosition?: "left" | "right";
 	}
 
-	const {
-		class: className,
-		message,
-		href,
-		backgroundColor,
-		hoverBackgroundColor,
-		icon: Icon,
-		iconPosition = "left",
-	}: Props = $props();
+	const { class: className, href, message, icon: Icon, iconPosition = "left" }: Props = $props();
 </script>
 
-<a
-	class={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-xl text-[var(--theme-bg-colour)] bg-[var(--background-color)] transition-[transform,background-color] hover:scale-[1.035] hover:bg-[var(--hover-background-colour)] [&_svg]:size-5 ${className ?? ""}`}
-	style:--background-color={backgroundColor}
-	style:--hover-background-colour={hoverBackgroundColor}
-	{href}
->
-	{#if Icon}
-		{#if iconPosition === "left"}
-			<Icon />
-		{/if}
+<a {href} class={`inline-flex items-center gap-2 ${className ?? ""}`}>
+	{#if Icon && iconPosition === "left"}
+		<Icon />
 	{/if}
 	{message}
-	{#if Icon}
-		{#if iconPosition === "right"}
-			<Icon />
-		{/if}
+	{#if Icon && iconPosition === "right"}
+		<Icon />
 	{/if}
 </a>

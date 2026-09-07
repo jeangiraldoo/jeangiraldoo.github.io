@@ -3,7 +3,7 @@
 	import projectData from "$lib/../routes/projects/data.json";
 
 	import CodeLogo from "@lucide/svelte/icons/code-xml";
-	import LinkIcon from "$lib/components/LinkIcon.svelte";
+	import Button from "$lib/components/Button.svelte";
 	import TagsList from "$lib/components/TagsList.svelte";
 
 	let projects = projectData;
@@ -79,14 +79,11 @@
 					tagColour="#8dd9a1"
 				/>
 				{#if project.source_code}
-					<LinkIcon
-						class="mt-auto justify-center px-3.5 py-2 rounded-md bg-[var(--theme-secondary-colour)] transition-colors hover:bg-[hsl(166,92%,78%)] [&_svg]:size-4"
+					<Button
+						class="mt-auto w-full justify-center text-center px-3.5 py-2 rounded-md text-black text-sm bg-[var(--theme-secondary-colour)] transition-colors hover:bg-[hsl(166,92%,78%)] [&_svg]:size-4"
 						href={project.source_code}
-						label={m.code_link_label()}
-						labelColour="black"
-						hoverLabelColour="black"
-						fontSize="0.875rem"
-						Icon={CodeLogo}
+						message={m.code_link_label()}
+						icon={CodeLogo}
 						iconPosition="left"
 					/>
 				{/if}
