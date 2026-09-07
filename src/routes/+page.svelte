@@ -7,6 +7,7 @@
 	import BentoBox from "$lib/components/BentoBox.svelte";
 	import Title from "$lib/components/Title.svelte";
 	import BlogPreview from "$lib/components/BlogPreview.svelte";
+	import ProjectsPreview from "$lib/components/ProjectsPreview.svelte";
 
 	import CrownIcon from "@lucide/svelte/icons/crown";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
@@ -16,6 +17,7 @@
 	import ToolBoxLogo from "@lucide/svelte/icons/toolbox";
 	import EarthLogo from "@lucide/svelte/icons/earth";
 	import HandshakeLogo from "@lucide/svelte/icons/handshake";
+	import HammerIcon from "@lucide/svelte/icons/hammer";
 
 	const totalPreviewPosts = 5;
 </script>
@@ -153,6 +155,16 @@
 			class="max-sm:text-lg"
 		/>
 		<TechStack />
+	</section>
+	<section>
+		<Title
+			level={3}
+			size="1.375rem"
+			title={"Featured projects"}
+			Icon={HammerIcon}
+			class="max-sm:text-lg"
+		/>
+		<ProjectsPreview max={3} onlyFeatured={true} />
 	</section>
 	<section aria-label={m.latest_posts_aria()}>
 		<Title
