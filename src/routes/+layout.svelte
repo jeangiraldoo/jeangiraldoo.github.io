@@ -24,7 +24,7 @@
 
 <div class="page min-h-dvh grid grid-rows-[auto_1fr]">
 	<header
-		class="relative flex flex-wrap items-center px-5 gap-x-[30px] gap-y-2.5 max-md:px-2.5 max-md:gap-x-2.5"
+		class="flex bg-[var(--theme-bg-colour)] flex-wrap items-center px-5 gap-x-[30px] gap-y-2.5 max-md:px-2.5 max-md:gap-x-2.5 sticky top-0 z-10"
 	>
 		<a
 			href={localizeHref("/")}
