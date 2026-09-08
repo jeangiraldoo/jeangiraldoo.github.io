@@ -40,7 +40,9 @@
 	};
 
 	function isWithinPath(path: string) {
-		return currentPage.includes(localizeHref(path));
+		const href = localizeHref(path);
+
+		return path === "/" ? currentPage === href : currentPage.includes(href);
 	}
 
 	import ToggleRightIcon from "@lucide/svelte/icons/toggle-right";
@@ -81,7 +83,6 @@
 						href={localizeHref(path)}
 						aria-current={isWithinPath(path) ? "page" : undefined}
 						class="flex items-center text-white text-xl hover:text-secondary max-md:text-2xl max-md:text-black"
-						class:text-secondary={isWithinPath(path)}
 					>
 						{message()}
 					</a>
@@ -111,3 +112,9 @@
 		{/snippet}
 	</Toggle>
 </header>
+
+<style>
+	nav > a[aria-current="page"]:not(:first-child) {
+		color: var(--theme-secondary-colour);
+	}
+</style>
