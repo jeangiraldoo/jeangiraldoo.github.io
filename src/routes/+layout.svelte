@@ -5,11 +5,7 @@
 	import { onMount } from "svelte";
 	import { locales, localizeHref } from "$lib/paraglide/runtime";
 
-	import HeaderMenu from "$lib/components/HeaderMenu.svelte";
-	import Toggle from "$lib/components/Toggle.svelte";
-
-	import ToggleRightIcon from "@lucide/svelte/icons/toggle-right";
-	import ToggleLeftIcon from "@lucide/svelte/icons/toggle-left";
+	import SiteHeader from "$lib/components/SiteHeader.svelte";
 
 	let isLightModeOn = $state(false);
 
@@ -23,39 +19,7 @@
 </script>
 
 <div class="page min-h-dvh grid grid-rows-[auto_1fr]">
-	<header
-		class="flex bg-[var(--theme-bg-colour)] flex-wrap items-center px-5 gap-x-[30px] gap-y-2.5 max-md:px-2.5 max-md:gap-x-2.5 sticky top-0 z-10"
-	>
-		<a
-			href={localizeHref("/")}
-			class="text-[var(--theme-primary-colour)] text-2xl"
-		>
-			Jean Giraldo
-		</a>
-
-		<HeaderMenu />
-		<div class="max-md:order-2 max-md:ms-auto">
-			<Toggle
-				initialState={isLightModeOn}
-				handler={(isNextLight: boolean) => {
-					document.body.classList.remove("dark-mode", "light-mode");
-
-					const newTheme = isNextLight ? "light-mode" : "dark-mode";
-
-					document.body.classList.add(newTheme);
-					localStorage.setItem("jeangiraldooTheme", newTheme);
-				}}
-			>
-				{#snippet onIcon()}
-					<ToggleRightIcon class="size-14 text-black max-md:size-7" />
-				{/snippet}
-
-				{#snippet offIcon()}
-					<ToggleLeftIcon class="size-14 text-white max-md:size-7" />
-				{/snippet}
-			</Toggle>
-		</div>
-	</header>
+	<SiteHeader {isLightModeOn} />
 
 	{@render children()}
 </div>
