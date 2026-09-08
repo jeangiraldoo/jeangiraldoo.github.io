@@ -16,6 +16,8 @@ SiSvelte,
 		SiTmux,
 		SiGo,
 		SiGodotengine,
+		SiLinux,
+		SiGnubash,
 	} from "@icons-pack/svelte-simple-icons";
 	import Code2 from "@lucide/svelte/icons/code-2";
 	import Tabs from "./Tabs.svelte";
@@ -40,6 +42,8 @@ SiSvelte,
 		TMux: { component: SiTmux, color: "#1BB91F" },
 		Go: { component: SiGo, color: "#3178C6" },
 		Godot: { component: SiGodotengine, color: "#2496ED" },
+		Linux: { component: SiLinux, color: "#000000" },
+		Bash: { component: SiGnubash, color: "#000000" },
 	};
 </script>
 

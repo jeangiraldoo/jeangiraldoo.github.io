@@ -5,7 +5,8 @@
 		"JavaScript",
 		"Go",
 		"Python",
-		"Lua"
+		"Lua",
+		"Bash"
 	],
 	"Frameworks": [
 		"Svelte",
@@ -22,6 +23,7 @@
 	"Others": [
 		"Git",
 		"Godot",
+		"Linux",
 		"Neovim",
 		"VSCode",
 		"TMux",
