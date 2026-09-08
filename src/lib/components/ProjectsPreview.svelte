@@ -60,13 +60,11 @@
 			<div
 				class="flex flex-col p-2.5 gap-5 bg-white/5 w-full flex-1 min-w-0"
 			>
-				<header class="flex flex-wrap items-center gap-[2%]">
-					<h2
-						class="flex text-3xl text-secondary m-0 min-h-[4.2rem] items-center max-md:text-xl max-md:min-h-0"
-					>
-						{get_message(project.message_keys.name)()}
-					</h2>
-				</header>
+				<h2
+					class="flex text-2xl justify-center text-secondary m-0 min-h-[4.2rem] items-center max-md:text-xl max-md:min-h-0"
+				>
+					{get_message(project.message_keys.name)()}
+				</h2>
 
 				<p
 					class="my-0 hyphens-auto text-base text-[var(--theme-text-colour)] min-h-[4.5em] max-md:min-h-0 max-md:text-sm"
