@@ -61,6 +61,8 @@
 	"project_codedocs_description": "Customizable Neovim annotation framework for code structures such as classes, functions, and more.",
 	"project_personal_website_name": "Personal website",
 	"project_personal_website_description": "Website showcasing my projects, blog, interests and more. (You are here!)",
+	"project_reelens_name": "reelens",
+	"project_reelens_description": "CLI that tracks your packages' latest releases from providers like GitHub and flags the ones you're behind on; includes changelogs.",
 	"techstack_title_label": "My toolbox",
 	"techstack_all_label": "All",
 	"techstack_languages_label": "Languages",

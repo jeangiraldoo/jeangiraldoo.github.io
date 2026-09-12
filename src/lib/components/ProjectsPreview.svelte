@@ -14,6 +14,8 @@
 		project_personal_website_name: m.project_personal_website_name,
 		project_personal_website_description:
 			m.project_personal_website_description,
+		project_reelens_name: m.project_reelens_name,
+		project_reelens_description: m.project_reelens_description,
 	};
 
 	type ProjectMessageKey = keyof typeof message_map;

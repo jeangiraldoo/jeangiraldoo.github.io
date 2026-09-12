@@ -30,5 +30,19 @@
 		],
 		"source_code": "https://github.com/jeangiraldoo/jeangiraldoo.github.io",
 		"featured": true
+	},
+	{
+		"image_path": "/images/projects/reelens.svg",
+		"message_keys": {
+			"name": "project_reelens_name",
+			"description": "project_reelens_description"
+		},
+		"stack": [
+			"Go",
+			"Cobra",
+			"GitHub Actions"
+		],
+		"source_code": "https://github.com/jeangiraldoo/reelens",
+		"featured": true
 	}
 ]
